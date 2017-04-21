@@ -1,0 +1,104 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 1
+	separator = "  "
+}
+
+order += "window_title" #kräver py3status
+order += "sysdata" #kräver py3status
+order += "backlight" #kräver py3status
+order += "volume master"
+#order += "ipv6"
+#order += "disk /"
+#order += "run_watch DHCP"
+order += "run_watch VPN"
+order += "wireless _first_"
+#order += "ethernet _first_"
+#order += "weather_yahoo" #kräver py3status
+order += "battery 0"
+#order += "load"
+order += "tztime local_date"
+order += "tztime local_time"
+
+window_title {
+
+}
+
+volume master {
+	format = " %volume"
+	format_muted = " Mute (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 1
+}
+
+backlight {
+	format = " {level}%"
+}
+
+wireless _first_ {
+        format_up = " %essid (%ip)"
+        format_down = ""
+	color_good = "#ffffff"
+}
+
+weather_yahoo {
+	woeid = 906507
+	units = "Celsius"
+	format "{today}"
+	format_today = "{%icon}{%temp}°{%units}{%text}"
+}
+
+ethernet _first_ {
+        # if you use %speed, i3status requires root privileges
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery 0 {
+        format = " %percentage"
+	#format = "{icon}{percent}"
+	path = "/sys/class/power_supply/BAT1/uevent"
+	low_threshold = 15
+	threshold_type = percentage
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+        pidfile = "/var/run/ppp0.pid"
+	format = "  Hemma"
+	format_down = ""
+	#pidfile = "/var/run/
+}
+
+tztime local_date {
+        format = " %Y-%m-%d"
+}
+
+tztime local_time {
+	format = " %H:%M"
+}
+
+load {
+        format = " %1min"
+}
+
+sysdata {
+	cache_timeout = 1
+	format = " {cpu_usage}%"
+}
+
+disk "/" {
+        format = "   %avail"
+}

@@ -1,0 +1,238 @@
+# vim:filetype=i3
+# i3 config file (v4)
+
+set $bg-color #2F343F
+set $inactive-bg-color #2F343F
+set $text-color #F3F4F5
+set $inactive-text-color #676E7D
+set $urgent-bg-color #E53935
+
+# Workspace names
+
+set $workspace1 "1: home"
+set $workspace2 "2: term"
+set $workspace3 "3: files"
+set $workspace4 "4: TV"
+set $workspace5 "5: vm"
+set $workspace6 "6: media"
+set $workspace7 "7"
+set $workspace8 "8: DCServer"
+set $workspace9 "9"
+set $workspace10 "10"
+
+set $mod Mod1
+
+font pango:System San Francisco Display, FontAwesome 15, siji 20
+
+floating_modifier $mod
+
+bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+d exec rofi -show drun -lines 10 -eh 2 -width 30 -padding 50 -opacity "85" -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+odiaeresis focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+odiaeresis move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Vill du verkligen avsluta?' -b 'Ja, avsluta' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+	
+	# gaps specific keys
+	bindsym plus gaps inner current plus 5
+	bindsym minus gaps inner current minus 5
+	bindsym 0 gaps inner all set 20
+}
+
+bindsym $mod+r mode "resize"
+
+
+
+
+# window colors
+#			border			background		text			indicator
+client.focused		$bg-color		$bg-color		$text-color		#00ff00
+client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	#00ff0
+client.focused_inactive $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#00ff00
+client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color
+
+
+# window borders - i3-gaps (airblader git) specific
+#
+new_window pixel 0
+new_float pixel 0
+gaps inner 20
+gaps outer 0
+#smart_gaps on
+
+
+#barnlås för tangentbordet
+bindsym $mod+shift+z exec xtrlock
+
+#exec_always --no-startup-id feh --bg-scale /home/nomad/Bilder/04101_minimalmountains_3840x2160.jpg &
+#exec_always --no-startup-id compton -f -b -c -C &
+exec_always --no-startup-id nm-applet &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
+exec --no-startup-id clipit &
+exec --no-startup-id blueman-applet &
+
+bindsym $mod+shift+x exec $HOME/bin/i3lock-daniel3.sh &
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 & # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 & # decrease screen brightness
+
+# Touchpad controls
+#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Screenshot via shutter
+bindsym Print exec shutter -f -e -o '/home/nomad/Bilder/Screenshots/%y-%m-%d_$wx$h.jpg'
+
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+assign [class="^Remmina$" title="^TV$"] $workspace4
+assign [class="^Remmina$" title="^DCServer$"] $workspace8
+assign [class="^Thunar$"] $workspace3
+assign [class="^VirtualBox$"] $workspace5
+assign [class="^Spotify$"] $workspace6
+assign [class="^Google\\-chrome$" title="^Plex$"] $workspace6
+
+for_window [class="feh"] floating enable
+floating_maximum_size 3840 x 2160
+
+for_window [class="(?i)blueman"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [class="(?i)VirtualBox"] floating enable
+
+
+# Power management, tagen från någons config
+#mode  "Press S=(sleep), H=(hibernate), R=(restart), D=(shutdown)" {
+#
+#        bindsym s exec sudo systemctl suspend; mode "default"
+#        bindsym h exec sudo systemctl hibernate; mode "default"
+#        bindsym d exec sudo 'shutdown -h now'; mode "default"
+#        bindsym r exec sudo 'shutdown -r now'; mode "default"
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#bindsym $mod+n mode "Press S=(sleep), H=(hibernate), R=(restart), D=(shutdown)"
+
+#litet skript för att skifta mellan klona/utvidga/av/på vid extern monitor
+bindsym $mod+Shift+s exec --no-startup-id /home/nomad/bin/monitor &
