@@ -193,7 +193,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "cpu: "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label = %percentage%%
@@ -241,7 +241,7 @@ interface = enp0s20u6
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = "eth: "
+format-connected-prefix = " "
 format-connected-foreground-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -269,7 +269,7 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = vol: 
+label-volume = "   "
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
