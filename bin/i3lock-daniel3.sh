@@ -16,13 +16,13 @@ pre_lock() {
     scrot "$tmpbg"
     convert "$tmpbg" -scale 5% -scale 2000% "$tmpbg"
     convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-    killall -SIGUSR1 dunst
+    #killall -SIGUSR1 dunst
     return
 }
 
 # Run after the locker exits
 post_lock() {
-    killall -SIGUSR2 dunst 
+    #killall -SIGUSR2 dunst 
     rm $tmpbg
     #sleep 1
     /home/nomad/.config/polybar/launch.sh & 

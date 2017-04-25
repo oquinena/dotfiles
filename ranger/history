@@ -19,9 +19,11 @@ cd .config
 open_wit
 open_with vim
 
-delete
 open_with 
 rename binq
 shell 
 shell ssh tv
 find 
+deletey
+open_with §
+delete

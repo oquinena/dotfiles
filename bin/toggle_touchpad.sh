@@ -17,5 +17,3 @@ else
 	#notify-send -a Touchpad "Touchpad turned on"
 	echo "Touchpad turned on"
 fi
-
-
