@@ -26,4 +26,5 @@ shell ssh tv
 find 
 deletey
 open_with §
+set confirm_on_delete never
 delete
