@@ -26,7 +26,7 @@ ZSH_THEME="agnoster"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -90,4 +90,14 @@ export PATH=~/bin:$PATH
 autoload -U compinit promptinit
 compinit
 
+alias chromium='chromium --force-device-scale-factor=2'
+alias spotify='spotify --force-device-scale-factor=2'
+alias u="sudo emerge --sync && sudo layman -S && emerge -auvDN --with-bdeps=y @world"
+alias h="cd"
 
+### Setting Terminator title to active command ###
+case $TERM in
+    xterm*)
+        precmd () {print -Pn "\e]0;string\a"}
+        ;;
+esac
