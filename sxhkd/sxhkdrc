@@ -150,11 +150,11 @@ alt + {Left,Down,Up,Right}
 
 # media keys
 XF86AudioRaiseVolume
-	pactl set-sink-volume 1 +15%
+	pactl set-sink-volume 1 +10%
 shift + XF86AudioRaiseVolume 
 	pactl set-sink-volume 1 +5%
 XF86AudioLowerVolume
-	pactl set-sink-volume 1 -15%
+	pactl set-sink-volume 1 -10%
 shift + XF86AudioLowerVolume
 	pactl set-sink-volume 1 -5%
 XF86AudioMute

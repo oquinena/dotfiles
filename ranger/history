@@ -26,8 +26,8 @@ find
 deletey
 open_with §
 set confirm_on_delete never
-delete
 open_with 
 open_with mount
 open_with feh
 open_with gimp
+delete

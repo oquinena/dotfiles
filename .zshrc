@@ -85,15 +85,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias emerge='sudo emerge'
 alias nano='nano -w'
-export EDITOR="vim"
-export PATH=~/bin:$PATH
+alias chromium='chromium --force-device-scale-factor=2'
+alias u="sudo emerge --sync && sudo layman -S && emerge -auvDN --with-bdeps=y @world"
+alias spotify='spotify --force-device-scale-factor=2'
+alias h="cd"
+alias mount="sudo mount"
+alias umount="sudo umount"
+alias t="/home/nomad/.config/ssh_tv.sh"
+alias d="/home/nomad/.config/ssh_dc.sh"
+
 autoload -U compinit promptinit
+export PATH=~/bin:$PATH
 compinit
 
-alias chromium='chromium --force-device-scale-factor=2'
-alias spotify='spotify --force-device-scale-factor=2'
-alias u="sudo emerge --sync && sudo layman -S && emerge -auvDN --with-bdeps=y @world"
-alias h="cd"
+export EDITOR="vim"
 
 ### Setting Terminator title to active command ###
 case $TERM in
