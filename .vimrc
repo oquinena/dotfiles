@@ -23,6 +23,7 @@ Plugin 'sjl/badwolf'
 Plugin 'ctrlp.vim'
 "Plugin 'Powershell-FTDetect'  
 Plugin 'itchyny/lightline.vim'
+Plugin 'reedes/vim-colors-pencil'
 Plugin 'scrooloose/nerdtree'
 Plugin 'wombat256.vim'  
 "Plugin 'ctrlpvim/ctrlp.vim'
@@ -272,5 +273,15 @@ if !has('gui_running')
   endif
 
 "colorscheme badwolf
+
+function! s:goyo_enter()
+    colorscheme pencil
+endfunction
+
+function! s:goyo_leave()
 colorscheme gruvbox
 set background=dark
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
