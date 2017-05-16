@@ -93,6 +93,7 @@ alias mount="sudo mount"
 alias umount="sudo umount"
 alias t="/home/nomad/.config/ssh_tv.sh"
 alias d="/home/nomad/.config/ssh_dc.sh"
+alias dm="sshfs daoq@dcserver:/ /mnt/dcserver"
 
 autoload -U compinit promptinit
 export PATH=~/bin:$PATH
