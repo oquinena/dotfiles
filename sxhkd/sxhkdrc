@@ -24,7 +24,7 @@ alt + Return
 
 # new browser window
 super + Return
-	chromium
+	google-chrome-stable	
 # program launcher
 
 #alt + d

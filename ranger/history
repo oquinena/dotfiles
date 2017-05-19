@@ -29,5 +29,6 @@ set confirm_on_delete never
 open_with mount
 open_with feh
 open_with gimp
-delete
 open_with 
+open_with k
+delete

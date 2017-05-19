@@ -1,0 +1,11 @@
+#!/bin/sh
+
+RSYNC=
+SSH=
+RUSER=
+RHOST=
+RPATH=
+LPATH=
+DATE=
+FNAME=
+

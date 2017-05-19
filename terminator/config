@@ -1,103 +1,26 @@
 [global_config]
-  always_split_with_profile = True
   borderless = True
-  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
-  handle_size = 1
-  suppress_multiple_term_dialog = True
-  title_font = Terminus 12
-  title_inactive_bg_color = "#657b83"
-  title_receive_fg_color = "#657b83"
-  title_transmit_bg_color = "#657b83"
-  title_transmit_fg_color = "#000000"
+  title_font = Terminus (TTF) Medium 12
   title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
-    [[[child0]]]
-      fullscreen = False
-      last_active_term = e10469d1-a327-41d7-be9d-b5c087c939fd
-      last_active_window = True
-      maximised = False
-      order = 0
-      parent = ""
-      position = 1871:48
-      size = 1871, 2040
-      title = nomad@osiris:~
-      type = Window
-    [[[terminal1]]]
-      order = 0
-      parent = child0
-      profile = default
-      type = Terminal
-      uuid = e10469d1-a327-41d7-be9d-b5c087c939fd
-  [[fullscreen]]
-    [[[child0]]]
-      order = 0
-      parent = ""
-      position = 0:55
-      size = 3840, 1987
-      type = Window
     [[[child1]]]
-      order = 0
-      parent = child0
-      position = 993
-      type = VPaned
-    [[[child2]]]
-      order = 0
-      parent = child1
-      position = 1920
-      type = HPaned
-    [[[child5]]]
-      order = 1
-      parent = child1
-      position = 1920
-      type = HPaned
-    [[[terminal3]]]
-      order = 0
-      parent = child2
-      profile = default
+      parent = window0
       type = Terminal
-    [[[terminal4]]]
-      order = 1
-      parent = child2
-      profile = default
-      type = Terminal
-    [[[terminal6]]]
-      order = 0
-      parent = child5
-      profile = default
-      type = Terminal
-    [[[terminal7]]]
-      order = 1
-      parent = child5
-      profile = default
-      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#242321"
+    background_color = "#002b36"
     background_darkness = 0.9
     background_image = None
     background_type = transparent
-    cursor_color = "#ffffff"
-    custom_command = TERM=xterm-256color zsh -l
-    font = Terminus 12
+    cursor_color = "#aaaaaa"
     foreground_color = "#839496"
-    icon_bell = False
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
-    urgent_bell = True
-    use_custom_command = True
-    use_system_font = False
-  [[fullscreen]]
-    background_image = None
-    custom_command = TERM=xterm-256color zsh -l
-    foreground_color = "#ffffff"
-    scrollback_infinite = True
-    scrollback_lines = 1500
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_custom_command = True
