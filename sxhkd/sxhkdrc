@@ -20,7 +20,7 @@ alt + shift + m
 
 # terminal emulator
 alt + Return
-	terminator	
+	urxvt	
 
 # new browser window
 super + Return
@@ -31,7 +31,7 @@ super + Return
 	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
 
 alt + d
-	j4-dmenu-desktop --dmenu="dmenu -i -nb '#2F343F' -fn 'System San Fransisco Display:8' -p 'Application: '"
+	j4-dmenu-desktop --dmenu="dmenu -i -nb '#2F343F' -fn 'SFNS Display:8' -p 'Sök: '"
 
 
 # make sxhkd reload its configuration files:

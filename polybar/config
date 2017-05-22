@@ -46,7 +46,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = FiraCode-Retina:pixelsize=22
+;font-0 = SFNS Display:62
 font-0 = Terminus:pixelsize=22:fontformat=truetype;1
 font-1 = unifont:size=18:heavy:fontformat=truetype;0
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
@@ -75,7 +75,7 @@ scroll-down = bspwm-deskprev
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:90:...%
+label = %title:0:80:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -180,7 +180,7 @@ type = internal/xbacklight
 format = <label> <bar>
 label =  
 
-bar-width = 5
+bar-width = 10
 bar-indicator = │
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
@@ -261,7 +261,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = #dfdfdf 
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -271,14 +271,14 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 label-volume = "   "
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = #dfdfdf
 
-format-muted-prefix = " "
+format-muted-prefix = "    "
 format-muted-foreground = #ffb52a
 ;format-muted-foreground = ${colors.foreground}
-label-muted = "muted "
+label-muted = "muted      "
 
-bar-volume-width = 5
+bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55

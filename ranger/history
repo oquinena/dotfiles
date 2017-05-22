@@ -31,4 +31,6 @@ open_with feh
 open_with gimp
 open_with 
 open_with k
+open_with google-chrome-stable
+open_with zip
 delete
