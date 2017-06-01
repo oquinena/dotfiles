@@ -17,20 +17,31 @@ help
 cd  
 cd .config
 open_wit
-open_with vim
 
 rename binq
 shell 
 shell ssh tv
-find 
 deletey
 open_with §
 set confirm_on_delete never
 open_with mount
 open_with feh
 open_with gimp
-open_with 
 open_with k
 open_with google-chrome-stable
 open_with zip
+rename 
+find 
+rename Vad.blir.det.för.S10E08.mp4
+open_with vim
+open_with llllllllllll
+open_with thunar
+shell mkdir Landscape
+open_with qkq
+open_with 
+open_with 1
+bulkrename 
+open_with 11
 delete
+mkdir WII
+open_with unrar

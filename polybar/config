@@ -54,7 +54,7 @@ font-3 = FontAwesome:pixelsize=20;2
 
 modules-left = bspwm i3 xwindow 
 modules-center = 
-modules-right = cpu vpncheck_hemma vpncheck_angkarr backlight volume xkeyboard memory wifi eth battery date powermenu
+modules-right = cpu vpncheck_hemma vpncheck_angkarr backlight volume xkeyboard memory wifi eth battery date
 
 tray-position = right
 tray-padding = 2

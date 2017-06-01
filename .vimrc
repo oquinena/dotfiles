@@ -31,6 +31,7 @@ Plugin 'textutil.vim'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/goyo.vim'
+Plugin 'Syntastic'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -285,3 +286,6 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+set mouse=a
+
