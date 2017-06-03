@@ -31,7 +31,7 @@ super + Return
 	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
 
 alt + d
-	j4-dmenu-desktop --dmenu="dmenu -i -nb '#2F343F' -fn 'SFNS Display:8' -p 'Sök: '"
+	j4-dmenu-desktop --dmenu="dmenu -i -nb '#516270' -nf '#000000' -sb '#414e59' -sf '#000000' -fn 'Terminus (TTF):8' -p 'App: '"
 
 
 # make sxhkd reload its configuration files:

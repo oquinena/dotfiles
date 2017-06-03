@@ -17,9 +17,7 @@ help
 cd  
 cd .config
 open_wit
-
 rename binq
-shell 
 shell ssh tv
 deletey
 open_with §
@@ -38,10 +36,14 @@ open_with llllllllllll
 open_with thunar
 shell mkdir Landscape
 open_with qkq
-open_with 
 open_with 1
-bulkrename 
-open_with 11
-delete
 mkdir WII
 open_with unrar
+open_with unrar e
+open_with 
+bulkrename 
+delete
+open_with .
+shell 
+
+open_with 11

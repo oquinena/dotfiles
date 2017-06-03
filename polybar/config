@@ -9,9 +9,11 @@
 ;=====================================================
 
 [colors]
-background = #2F343F
+;background = #2F343F
+background = #516270
 background-alt = #444
-foreground = #dfdfdf
+;foreground = #dfdfdf
+foreground = #000000
 foreground-alt = #55
 primary = #ffb52a
 secondary = #e60053
@@ -35,7 +37,7 @@ foreground = ${colors.foreground}
 overline-size = 2
 overline-color = #f00
 underline-size = 2
-underline-color = #00f
+;underline-color = #00f
 
 border-bottom.size = 2
 border-bottom-color = #333
@@ -47,10 +49,11 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = SFNS Display:62
-font-0 = Terminus:pixelsize=22:fontformat=truetype;1
-font-1 = unifont:size=18:heavy:fontformat=truetype;0
-font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
-font-3 = FontAwesome:pixelsize=20;2
+font-0 = "Terminus (TTF):style=Bold:pixelsize=22;0"
+font-1 = "Terminus (TTF):style=Bold:pixelsize=22;0"
+font-2 = unifont:size=18:heavy:fontformat=truetype;0
+font-3 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
+font-4 = FontAwesome:pixelsize=20;2
 
 modules-left = bspwm i3 xwindow 
 modules-center = 
@@ -81,7 +84,7 @@ label = %title:0:80:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-underline = ${colors.secondary}
+;format-underline = ${colors.secondary}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 
@@ -89,7 +92,7 @@ label-layout = %layout%
 
 label-indicator-padding = 2
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -109,8 +112,8 @@ type = internal/bspwm
 ws-icon-default = x
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = #414e59
+;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -186,17 +189,17 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+;bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+;bar-empty-foreground = ${colors.foreground-alt}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = #f90000
+;format-underline = #f90000
 label = %percentage%%
 
 [module/memory]
@@ -205,7 +208,7 @@ interval = 2
 ;format = <forprefix> <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = #4bffdc
+;format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wifi]
@@ -213,7 +216,7 @@ type = custom/script
 interval = 60
 exec = "nmcli d show wlp6s0 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
 format-prefix = " "
-format-underline = #9f78e1
+;format-underline = #9f78e1
 format-prefix-foreground = ${colors.foreground}
 
 [module/wlan]
@@ -241,12 +244,12 @@ type = internal/network
 interface = enp0s20u6
 interval = 3.0
 
-format-connected-underline = #55aa55
+;format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-foreground-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected-underline = ${self.format-connected-underline}
+;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -261,8 +264,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = #dfdfdf 
-format-underline = #0a6cf5
+;format-prefix-foreground = #dfdfdf 
+;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -271,30 +274,31 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 label-volume = "   "
-label-volume-foreground = #dfdfdf
+;label-volume-foreground = #dfdfdf
 
-format-muted-prefix = "    "
+format-muted-prefix = " "
 format-muted-foreground = #ffb52a
 ;format-muted-foreground = ${colors.foreground}
 label-muted = "muted      "
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-width = 6
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = │
 bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #ff
+;bar-volume-indicator-foreground = #ff
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+;bar-volume-empty-foreground = ${colors.foreground-alt}
+
 
 [module/battery]
 type = internal/battery
@@ -303,14 +307,14 @@ adapter = ACAD
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+;format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${self.format-charging-underline}
+;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -376,14 +380,15 @@ type = custom/script
 exec = pgrep openconnect
 interval = 5
 label = ängkärr
-format-underline = #268bd2
+;format-underline = #268bd2
 format-prefix = " "
+click-right = nmcli con down Ängkärr
 
 [module/vpncheck_hemma]
 type = custom/script
 exec = pgrep pptp
 interval = 5
 label = hemma
-format-underline = #268bd2
+;format-underline = #268bd2
 format-prefix = " "
-
+click-right = nmcli con down Hemma
