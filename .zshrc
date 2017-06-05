@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 alias emerge='sudo emerge'
 alias nano='nano -w'
 alias chromium='chromium --force-device-scale-factor=2'
-alias u="sudo emerge --sync && sudo layman -S && emerge -auvDN --with-bdeps=y @world"
+alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDN --with-bdeps=y @world"
 alias spotify='spotify --force-device-scale-factor=2'
 alias h="cd"
 alias mount="sudo mount"
