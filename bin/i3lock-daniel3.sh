@@ -15,6 +15,7 @@ pre_lock() {
     #mpc pause
     scrot "$tmpbg"
     convert "$tmpbg" -scale 5% -scale 2000% "$tmpbg"
+    convert -type GrayScaleMatte "$tmpbg"
     convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
     #killall -SIGUSR1 dunst
     return

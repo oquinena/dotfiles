@@ -42,8 +42,8 @@ open_with unrar
 open_with unrar e
 open_with 
 bulkrename 
-delete
 open_with .
 shell 
-
 open_with 11
+
+delete

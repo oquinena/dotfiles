@@ -11,7 +11,7 @@ alt + shift + v
 	/home/nomad/bin/vpn-toggle.sh
 
 # Restart Polybar
-alt + shift + r
+alt + super + r
 	/home/nomad/.config/polybar/launch.sh
 
 # Toggle touchpad
@@ -31,7 +31,7 @@ super + Return
 	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
 
 alt + d
-	j4-dmenu-desktop --dmenu="dmenu -i -nb '#516270' -nf '#000000' -sb '#414e59' -sf '#000000' -fn 'Terminus (TTF):8' -p 'App: '"
+	j4-dmenu-desktop --dmenu="dmenu -i -nb '#516270' -nf '#000000' -sb '#414e59' -sf '#000000' -fn 'Ubuntu Condensed:8' -p 'App: '"
 
 
 # make sxhkd reload its configuration files:
@@ -81,6 +81,9 @@ alt + ctrl + {x,y,z}
 ## Cycle through windows west/left 
 alt + r
 	bspc node @/ -R 90
+## Cycle through windows east/right
+alt + shift + r
+	bspc node @/ -R -90
 
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l} 

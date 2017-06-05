@@ -49,11 +49,13 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = SFNS Display:62
-font-0 = "Terminus (TTF):style=Bold:pixelsize=22;0"
-font-1 = "Terminus (TTF):style=Bold:pixelsize=22;0"
-font-2 = unifont:size=18:heavy:fontformat=truetype;0
-font-3 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
-font-4 = FontAwesome:pixelsize=20;2
+;font-0 = "Terminus (TTF):style=Bold:pixelsize=25;0"
+;font-1 = "Terminus (TTF):style=Bold:pixelsize=25;0"
+font-0 = "Ubuntu Condensed:pixelsize=28;3"
+font-1 = "Ubuntu Condensed:pixelsize=28;3"
+;font-2 = unifont:size=18:heavy:fontformat=truetype;0
+font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
+font-3 = FontAwesome:pixelsize=20;2
 
 modules-left = bspwm i3 xwindow 
 modules-center = 
@@ -91,7 +93,7 @@ format-prefix-foreground = ${colors.foreground}
 label-layout = %layout%
 
 label-indicator-padding = 2
-label-indicator-background = ${colors.secondary}
+label-indicator-background = #414e59 
 ;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
@@ -183,7 +185,7 @@ type = internal/xbacklight
 format = <label> <bar>
 label =  
 
-bar-width = 10
+bar-width = 6
 bar-indicator = │
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
@@ -273,13 +275,13 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = "   "
+label-volume = ""
 ;label-volume-foreground = #dfdfdf
 
-format-muted-prefix = " "
+format-muted-prefix = ""
 format-muted-foreground = #ffb52a
 ;format-muted-foreground = ${colors.foreground}
-label-muted = "muted      "
+label-muted = "muted   "
 
 bar-volume-width = 6
 ;bar-volume-foreground-0 = #55aa55
