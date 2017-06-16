@@ -10,7 +10,7 @@
 
 [colors]
 ;background = #2F343F
-background = #516270
+background = #cdbf9a
 background-alt = #444
 ;foreground = #dfdfdf
 foreground = #000000
@@ -20,7 +20,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [global/wm]
-;margin-top = 5
+;margin-top = -5
 ;margin-bottom = 5
 
 [bar/daniels]
@@ -45,7 +45,7 @@ border-bottom-color = #333
 spacing = 1
 padding-left = 0
 padding-right = 2
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
 ;font-0 = SFNS Display:62
@@ -57,8 +57,8 @@ font-1 = "Ubuntu Condensed:pixelsize=28;3"
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
 font-3 = FontAwesome:pixelsize=20;2
 
-modules-left = bspwm i3 xwindow 
-modules-center = 
+modules-left = i3 xwindow 
+modules-center = bspwm 
 modules-right = cpu vpncheck_hemma vpncheck_angkarr backlight volume xkeyboard memory wifi eth battery date
 
 tray-position = right
@@ -80,20 +80,20 @@ scroll-down = bspwm-deskprev
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:80:...%
+label = " %title:0:80:...% "
 
 [module/xkeyboard]
 type = internal/xkeyboard
-blacklist-0 = num lock
+;blacklist-0 = num lock
 
 ;format-underline = ${colors.secondary}
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+;format-prefix = " "
+;format-prefix-foreground = ${colors.foreground}
 
-label-layout = %layout%
+;label-layout = %layout%
 
-label-indicator-padding = 2
-label-indicator-background = #414e59 
+;label-indicator-padding = 2
+label-indicator-background = #a09578 
 ;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
@@ -114,7 +114,7 @@ type = internal/bspwm
 ws-icon-default = x
 
 label-focused = %index%
-label-focused-background = #414e59
+label-focused-background = #a09578
 ;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -275,13 +275,13 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = ""
+label-volume = "  "
 ;label-volume-foreground = #dfdfdf
 
 format-muted-prefix = ""
 format-muted-foreground = #ffb52a
 ;format-muted-foreground = ${colors.foreground}
-label-muted = "muted   "
+label-muted = "muted"
 
 bar-volume-width = 6
 ;bar-volume-foreground-0 = #55aa55

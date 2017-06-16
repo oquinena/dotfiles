@@ -9,7 +9,7 @@ import time
 
 ENV = "KDE"  # Can be 'KDE' or 'GNOME'
 DEVICEADDR = "98:E7:F5:7D:C5:B9" # bluetooth device address
-CHECKINTERVAL = 30  # device pinged at this interval (seconds) when screen is unlocked
+CHECKINTERVAL = 60  # device pinged at this interval (seconds) when screen is unlocked
 CHECKREPEAT = 2  # device must be unreachable this many times to lock
 mode = 'unlocked'
 

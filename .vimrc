@@ -273,7 +273,8 @@ if !has('gui_running')
 	  set t_Co=256
   endif
 
-"colorscheme badwolf
+colorscheme gruvbox
+set background=dark
 
 function! s:goyo_enter()
     colorscheme pencil

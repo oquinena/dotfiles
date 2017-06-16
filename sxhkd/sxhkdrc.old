@@ -31,12 +31,12 @@ super + Return
 	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
 
 alt + d
-	j4-dmenu-desktop --dmenu="dmenu -i -nb '#cdbf9a' -nf '#000000' -sb '#a09578' -sf '#000000' -fn 'Ubuntu Condensed:8' -p 'Search: '"
+	j4-dmenu-desktop --dmenu="dmenu -i -nb '#cdbf9a' -nf '#000000' -sb '#a09578' -sf '#000000' -fn 'Ubuntu Condensed:8' -p 'App: '"
 
 
 # make sxhkd reload its configuration files:
 alt + Escape
-	pkill -USR1 -x sxhkd 
+	pkill -USR1 -x sxhkd
 
 #
 # bspwm hotkeys
@@ -67,14 +67,8 @@ alt + g
 #
 
 # set the window state
-alt + {t,shift + t}
-	bspc node -t {tiled,pseudo_tiled}
-
-# set floating + fullscreen keys as toggles
-alt + {s,f}
-	state={floating,fullscreen}; \
-	bspc query -N -n "focused.$\{state\}" && state=tiled; \
-	bspc node -t "$state"
+alt + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 alt + ctrl + {x,y,z}
@@ -94,6 +88,8 @@ alt + shift + r
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l} 
 	bspc node -{f,s} {west,south,north,east}
+#alt + {_,shift + }{Left,Down,Up,Right}
+#	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
 alt + {p,b,comma,period}

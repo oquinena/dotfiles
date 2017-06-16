@@ -17,6 +17,7 @@ pre_lock() {
     convert "$tmpbg" -scale 5% -scale 2000% "$tmpbg"
     convert -type GrayScaleMatte "$tmpbg"
     convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
+    umount /mnt/dcserver 
     #killall -SIGUSR1 dunst
     return
 }
