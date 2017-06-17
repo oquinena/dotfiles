@@ -18,7 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+" Plugin 'L9'
 Plugin 'sjl/badwolf'
 Plugin 'ctrlp.vim'
 "Plugin 'Powershell-FTDetect'  

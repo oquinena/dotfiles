@@ -117,3 +117,5 @@ case $TERM in
         precmd () {print -Pn "\e]0;string\a"}
         ;;
 esac
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
