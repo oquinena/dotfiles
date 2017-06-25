@@ -279,7 +279,7 @@ label-volume = "  "
 ;label-volume-foreground = #dfdfdf
 
 format-muted-prefix = ""
-format-muted-foreground = #ffb52a
+format-muted-foreground = #8e0707
 ;format-muted-foreground = ${colors.foreground}
 label-muted = "muted"
 
@@ -306,7 +306,7 @@ bar-volume-empty-font = 2
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-full-at = 100
+full-at = 99
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
@@ -319,7 +319,9 @@ format-full-prefix-foreground = ${colors.foreground}
 ;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
+ramp-capacity-0-foreground = #8e0707
 ramp-capacity-1 = 
+ramp-capacity-1-foreground = #8e0707
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 

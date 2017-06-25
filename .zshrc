@@ -104,6 +104,8 @@ alias d="/home/nomad/.config/ssh_dc.sh"
 alias dm="sshfs daoq@dcserver:/ /mnt/dcserver && cd /mnt/dcserver"
 alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
 alias nmap="sudo nmap"
+alias v="vim"
+alias poly-cfg="vim ~/.config/polybar/config"
 
 autoload -U compinit promptinit
 export PATH=~/bin:$PATH

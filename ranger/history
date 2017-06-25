@@ -1,4 +1,3 @@
-s
 set
 h
 /?
@@ -14,7 +13,6 @@ open_with §
 set confirm_on_delete never
 open_with mount
 open_with feh
-open_with k
 open_with google-chrome-stable
 open_with zip
 rename 
@@ -38,13 +36,15 @@ open_with .keep
 open_with dolpin-emu
 open_with dolphin-emu
 bulkrename 
-open_with gimp
 shell unzip stavarex_spellright.zip
-open_with 11
 shell ncdu
 shell 
 rename Downloads
 rename airboard retur.pdf
 open_with 
-delete
 find w
+shell git pull
+open_with k
+open_with 11
+open_with gimp
+delete
