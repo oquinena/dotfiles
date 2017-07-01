@@ -27,6 +27,9 @@ super + Return
 	google-chrome-stable	
 # program launcher
 
+# Child lock - enter passwd to unlock mouse + keyboard
+alt + shift + l
+	xtrlock 
 #alt + d
 	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
 

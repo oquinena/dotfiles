@@ -107,6 +107,7 @@ alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
 alias nmap="sudo nmap"
 alias v="vim"
 alias poly-cfg="vim ~/.config/polybar/config"
+alias r="ranger"
 
 autoload -U compinit promptinit
 export PATH=~/bin:$PATH
