@@ -165,7 +165,7 @@ gaps outer 0
 
 
 #barnlås för tangentbordet
-bindsym $mod+shift+z exec xtrlock
+bindsym $mod+shift+z exec xtrlock 
 
 #exec_always --no-startup-id feh --bg-scale /home/nomad/Bilder/04101_minimalmountains_3840x2160.jpg &
 #exec_always --no-startup-id compton -f -b -c -C &
