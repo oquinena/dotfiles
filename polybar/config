@@ -1,4 +1,4 @@
-; vim: filetype=dosini
+; vim:ft=dosini
 ;=====================================================
 ;
 ;   To learn more about how to configure Polybar
@@ -10,16 +10,16 @@
 
 [colors]
 ;background = #2F343F
-background = #cdbf9a
+background = #000000
 background-alt = #444
 ;foreground = #dfdfdf
-foreground = #000000
+foreground = #d1d1d1
 foreground-alt = #55
-primary = #ffb52a
+primary = #ffd5a3
 secondary = #e60053
 alert = #bd2c40
 
-[global/wm]
+;[global/wm]
 ;margin-top = -5
 ;margin-bottom = 5
 
@@ -57,12 +57,12 @@ font-1 = "Ubuntu Condensed:pixelsize=28;3"
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
 font-3 = FontAwesome:pixelsize=20;2
 
-modules-left = i3 xwindow 
-modules-center = bspwm 
-modules-right = cpu vpncheck_hemma vpncheck_angkarr backlight volume xkeyboard memory wifi eth battery date
+modules-left = bspwm xwindow 
+modules-center = date 
+modules-right = cpu vpncheck_hemma vpncheck_angkarr backlight volume xkeyboard memory wifi eth battery 
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -93,7 +93,7 @@ type = internal/xkeyboard
 ;label-layout = %layout%
 
 ;label-indicator-padding = 2
-label-indicator-background = #a09578 
+label-indicator-background = #1e1e1e 
 ;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
@@ -113,20 +113,24 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 ws-icon-default = x
 
-label-focused = %index%
-label-focused-background = #a09578
+;label-focused = %index%
+label-focused = 
+label-focused-background = #1e1e1e
 ;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-occupied = %index%
+;label-occupied = %index%
+label-occupied = 
 label-occupied-padding = 2
 ;label-occupied-underline = ${colors.primary}
 
-label-urgent = %index%!
+;label-urgent = %index%!
+label-urgen = 
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+;label-empty = %index%
+label-empty = 
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
@@ -321,7 +325,7 @@ format-full-prefix-foreground = ${colors.foreground}
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #8e0707
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = #8e0707
+;ramp-capacity-1-foreground = #8e0707
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
@@ -396,3 +400,8 @@ label = hemma
 ;format-underline = #268bd2
 format-prefix = " "
 click-right = nmcli con down Hemma
+
+[module/touchpad]
+type = custom/script
+exec = 
+interval = 5

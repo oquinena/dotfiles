@@ -6,6 +6,10 @@
 alt + shift + x
 	/home/nomad/bin/i3lock-daniel3.sh
 
+# Start ranger
+#alt + r
+#	urxvt -e xanger
+
 # Toggle VPN-connections
 alt + shift + v
 	/home/nomad/bin/vpn-toggle.sh
@@ -34,7 +38,7 @@ alt + shift + o
 	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
 
 alt + d
-	j4-dmenu-desktop --dmenu="dmenu -i -nb '#cdbf9a' -nf '#000000' -sb '#a09578' -sf '#000000' -fn 'Ubuntu Condensed:8' -p 'Search: '"
+	j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#ffffff' -sb '#1e1e1e' -sf '#ffffff' -fn 'Ubuntu Condensed:8' -p 'Search: '"
 
 
 # make sxhkd reload its configuration files:
