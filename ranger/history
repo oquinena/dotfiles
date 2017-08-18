@@ -45,6 +45,6 @@ find
 shell mv octonauterna\ s01e3 octonauterna\ s01e33.mp4
 bulkrename 
 1
+open_with 11
 open_with 1
 delete
-open_with 11
