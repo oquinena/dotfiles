@@ -16,12 +16,12 @@ URxvt.font: 		xft:Terminus (TTF):style=Medium:size=12,xft:PowerlineSymbols:pixel
 URxvt.allow_bold:	true 
 
 !! Fake transperancy
-URxvt.transparent:	true
-URxvt.shading:		25
+!!URxvt.transparent:	true
+!!URxvt.shading:		25
 
 !! True (composite) transperancy
-!URxvt.depth:		32
-!URxvt.background:	rgba:0000/0000/0200/c800
+URxvt.depth:		32
+URxvt.background:	rgba:0000/0000/0200/c800
 
 URxvt.scrollBar:	false
 URxvt.perl-ext:		default,url-select,matcher

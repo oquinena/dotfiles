@@ -53,7 +53,7 @@ case $WM in
 		blueman-applet &
 		xset s 600 &
 		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
-		#compton & # slowing down chromium + vimium ext -- FIX!
+		compton & # compositor 
 		xsetroot -cursor_name left_ptr &
 		exec bspwm
 		;;

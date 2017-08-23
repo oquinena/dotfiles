@@ -10,7 +10,7 @@
 
 [colors]
 ;background = #2F343F
-background = #000000
+background = #99000000
 background-alt = #444
 ;foreground = #dfdfdf
 foreground = #d1d1d1
@@ -44,7 +44,7 @@ border-bottom-color = #333
 
 spacing = 1
 padding-left = 0
-padding-right = 2
+padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
@@ -115,13 +115,14 @@ ws-icon-default = x
 
 ;label-focused = %index%
 label-focused = 
-label-focused-background = #1e1e1e
+;label-focused-background = #1A000000
 ;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ;label-occupied = %index%
 label-occupied = 
 label-occupied-padding = 2
+label-occupied-foreground = #66FFFFFF
 ;label-occupied-underline = ${colors.primary}
 
 ;label-urgent = %index%!
