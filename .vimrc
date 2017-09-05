@@ -33,6 +33,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/goyo.vim'
 Plugin 'Syntastic'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)

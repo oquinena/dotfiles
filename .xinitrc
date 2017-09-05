@@ -24,7 +24,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
-feh --bg-scale /home/nomad/Pictures/Wallpapers/Simple/IVIxLlq.jpg & # Set wallpaper
+feh --bg-scale /home/nomad/Pictures/Wallpapers/abstract/city.jpg & # Set wallpaper
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 WM=${3:-bspwm}
@@ -53,7 +53,7 @@ case $WM in
 		blueman-applet &
 		xset s 600 &
 		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
-		compton & # compositor 
+		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
 		xsetroot -cursor_name left_ptr &
 		exec bspwm
 		;;
@@ -64,6 +64,7 @@ case $WM in
 	xmonad)
 	###### XMonad #####
 		xsetroot -cursor_name left_ptr &
+		xmobar 
 		exec /usr/bin/xmonad
 		;;
 esac

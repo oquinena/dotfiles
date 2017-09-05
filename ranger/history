@@ -1,5 +1,3 @@
-cd  
-cd .config
 open_wit
 rename binq
 shell ssh tv
@@ -21,7 +19,6 @@ mkdir WII
 open_with unrar
 open_with unrar e
 open_with .
-
 shell dm
 shell unrar e 1u-metroid-prime-trilogy-usa.rar
 shell unrar e wzrd-ssbb.rar
@@ -39,12 +36,15 @@ open_with gimp
 open_with
 find §
 shell git pull
-find 
 shell mv octonauterna\ s01e3 octonauterna\ s01e33.mp4
-bulkrename 
 1
+open_with extract
+shell extract wwr-wogoousa.rar
+find 
+bulkrename 
+
 open_with 11
 open_with 1
-delete
 open_with 
-open_with extract
+rename Music
+delete

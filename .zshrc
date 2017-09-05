@@ -97,7 +97,7 @@ alias nano='nano -w'
 alias chromium='chromium --force-device-scale-factor=2'
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDN --with-bdeps=y @world"
 alias spotify='spotify --force-device-scale-factor=2'
-alias h="cd"
+#alias h="cd"
 alias mount="sudo mount"
 alias umount="sudo umount"
 alias t="/home/nomad/.config/ssh_tv.sh"
