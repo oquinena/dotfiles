@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=DCServer
+#GenericName=Terminal
+Comment=VNC connection to server DCServer
+Exec=remmina -c .local/share/remmina/1505980191411.remmina
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=xterm-color_48x48
+Categories=System;
+Keywords=remote;desktop;vnc;

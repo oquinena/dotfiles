@@ -1,14 +1,3 @@
-open_wit
-rename binq
-shell ssh tv
-deletey
-open_with §
-set confirm_on_delete never
-open_with mount
-open_with feh
-open_with google-chrome-stable
-open_with zip
-rename 
 rename Vad.blir.det.för.S10E08.mp4
 open_with vim
 open_with llllllllllll
@@ -27,7 +16,6 @@ open_with dolpin-emu
 open_with dolphin-emu
 shell unzip stavarex_spellright.zip
 shell ncdu
-shell 
 rename Downloads
 rename airboard retur.pdf
 find w
@@ -35,16 +23,28 @@ open_with k
 open_with gimp
 open_with
 find §
-shell git pull
 shell mv octonauterna\ s01e3 octonauterna\ s01e33.mp4
 1
 open_with extract
 shell extract wwr-wogoousa.rar
 find 
-bulkrename 
-
-open_with 11
 open_with 1
-open_with 
 rename Music
+shell mkdir torrents
+
+rename torrents
+rename torrents§
+shell mkdir chrome
+rename wallpapers Wallpapers
+rename Wallpapers
+shell 
+shell git pull
+shell mkdir completed
+shell svtplay-dl https://www.svtplay.se/video/1176197/pepparkornen/25-4-19-30?start=auto
+shell mkdir season 01
+shell mkdir "Season 01"
+shell mkdir "Season 02"
+bulkrename 
 delete
+open_with 
+open_with 11

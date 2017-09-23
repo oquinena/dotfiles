@@ -1,15 +1,5 @@
-source ~/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle chrissicool/zsh-256color
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+(wal -r &)
+setsid wal -r
 # Path to your oh-my-zsh installation.
   export ZSH=/home/nomad/.oh-my-zsh
 
@@ -108,9 +98,11 @@ alias nmap="sudo nmap"
 alias v="vim"
 alias poly-cfg="vim ~/.config/polybar/config"
 alias r="ranger"
+alias krebuild="sudo make -j8 && sudo make install modules_install && sudo genkernel ramdisk && sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias etc-update="sudo etc-update"
 
 autoload -U compinit promptinit
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.local/bin:$PATH
 compinit
 
 export EDITOR="vim"

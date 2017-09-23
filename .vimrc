@@ -11,7 +11,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 Plugin 'sjl/badwolf'
 Plugin 'ctrlp.vim'
+Plugin 'dylanaraps/wal.vim'
 "Plugin 'Powershell-FTDetect'  
 Plugin 'itchyny/lightline.vim'
 Plugin 'reedes/vim-colors-pencil'
@@ -276,8 +277,8 @@ if !has('gui_running')
 	  set t_Co=256
   endif
 
-colorscheme gruvbox
-set background=dark
+colorscheme wal
+" set background=dark
 
 function! s:goyo_enter()
     colorscheme pencil

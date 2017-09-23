@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=TV
+#GenericName=Terminal
+Comment=VNC connection to local server TV
+Exec=remmina -c /home/nomad/.local/share/remmina/1505967156788.remmina
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=xterm-color_48x48
+Categories=System;
+Keywords=remote;desktop;vnc;

@@ -4,9 +4,11 @@
 [colors]
 ;background = #2F343F
 background = #99000000
+;background = ${xrdb:color2}
 background-alt = #444
 ;foreground = #dfdfdf
 foreground = #d1d1d1
+;foreground = ${xrdb:color7}
 foreground-alt = #55
 primary = #ffd5a3
 secondary = #e60053
@@ -17,7 +19,7 @@ alert = #bd2c40
 ;margin-bottom = 5
 
 [bar/daniels]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 40
 offset-x = 0
@@ -48,7 +50,7 @@ font-3 = FontAwesome:pixelsize=20;2
 
 modules-left = bspwm xwindow 
 modules-center = 
-modules-right = cpu vpncheck_hemma vpncheck_angkarr backlight volume xkeyboard memory wifi eth battery date
+modules-right = cpu vpncheck_hemma vpncheck_angkarr weather temperature uptime backlight volume xkeyboard memory wifi eth battery date
 
 tray-position = right
 tray-padding = 0
@@ -175,6 +177,7 @@ toggle-off-foreground = #66
 
 [module/backlight]
 type = internal/xbacklight
+card = intel_backlight
 
 format = <label> <bar>
 label =  
@@ -210,14 +213,21 @@ label = %percentage_used%%
 [module/wifi]
 type = custom/script
 interval = 60
-exec = "nmcli d show wlp6s0 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
+exec = "nmcli d show wlp4s0 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
 format-prefix = " "
 ;format-underline = #9f78e1
 format-prefix-foreground = ${colors.foreground}
 
+[module/uptime]
+type = custom/script
+interval = 60
+exec = ~/.config/polybar/uptime.sh 
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+
 [module/wlan]
 type = internal/network
-interface = wlp6s0
+interface = wlp4s0
 interval = 3.0
 
 format-connected = <label-connected>
@@ -298,8 +308,8 @@ bar-volume-empty-font = 2
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ACAD
+battery = BAT0
+adapter = AC
 full-at = 99
 
 format-charging = <animation-charging> <label-charging>
@@ -335,9 +345,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+;format-warn-underline = ${self.format-underline}
 
 label = %temperature%
 label-warn = %temperature%
@@ -395,3 +405,11 @@ click-right = nmcli con down Hemma
 type = custom/script
 exec = 
 interval = 5
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+exec = ~/.config/polybar/weather
