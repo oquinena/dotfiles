@@ -18,7 +18,7 @@ xset s off
 xset -b
 
 setxkbmap -option terminate:ctrl_alt_bksp
-setxbkmap se
+#setxkbmap se
 #/home/nomad/bin/bluetooth-lock.py & #Lock screen when phone is not pinged
 
 ###### For gnome-keyring to work #######
@@ -26,8 +26,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
-feh --bg-scale /home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg & # Set wallpaper
-wal -a 85 -i /home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg & # Testing, applying colorscheme from pywal
+wal -a 80 -i "/home/nomad/Pictures/Wallpapers/Dystopian/339128.jpg" & # Testing, applying colorscheme from pywal
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 WM=${3:-bspwm}
@@ -71,4 +70,8 @@ case $WM in
 		xmobar 
 		exec /usr/bin/xmonad
 		;;
+	qtile)
+		polybar daniels &
+		compton --config /home/nomad/.config/compton/compton.conf.20170903 &
+		exec qtile
 esac

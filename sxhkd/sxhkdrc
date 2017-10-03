@@ -3,8 +3,8 @@
 #
 
 # Lock screen
-alt + shift + x
-	/home/nomad/bin/i3lock-daniel3.sh
+alt + shift + {x,o}
+    {$HOME/bin/i3lock-daniel3.sh,xtrlock}
 
 # Start ranger
 #alt + r
@@ -16,7 +16,6 @@ alt + shift + v
 
 # Restart Polybar
 alt + super + r
-	/home/nomad/.config/polybar/launch.sh
 
 # Toggle touchpad
 alt + shift + m
@@ -29,21 +28,17 @@ alt + Return
 # new browser window
 super + Return
 	google-chrome-stable	
+
 # program launcher
-
-# Child lock - enter passwd to unlock mouse + keyboard
-alt + shift + o
-	xtrlock 
 #alt + d
-	#rofi -show drun -lines 10 -eh 2 -width 30 -padding 40 -bw 0 -font "System San Fransisco Display 24" -hide-scrollbar -bw 2
-
+#    rofi -modi combi -show combi -combi-modi run,drun -font "Fira Mono for Powerline 22" -lines 1 -columns 10 -width 100 -location 2
 alt + d
-	j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#ffffff' -sb '#1e1e1e' -sf '#ffffff' -fn 'Ubuntu Condensed:8' -p 'Search: '"
+    j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#ffffff' -sb '#1e1e1e' -sf '#ffffff' -fn 'Ubuntu Condensed:8' -p 'Search: '"
 
 
 # make sxhkd reload its configuration files:
 alt + Escape
-	pkill -USR1 -x sxhkd
+	{$HOME/.config/polybar/launch.sh, pkill -USR1 -x sxhkd}
 
 #
 # bspwm hotkeys
@@ -170,7 +165,7 @@ alt + super + shift + {h,j,k,l}
 
 # move a floating window
 alt + {Left,Down,Up,Right}
-	bspc node -v {-30 0,0 30,0 -30,30 0}
+	bspc node -v {-50 0,0 50,0 -50,50 0}
 
 # media keys
 XF86AudioRaiseVolume

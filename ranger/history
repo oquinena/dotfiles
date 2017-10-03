@@ -1,11 +1,3 @@
-rename Vad.blir.det.för.S10E08.mp4
-open_with vim
-open_with llllllllllll
-open_with thunar
-shell mkdir Landscape
-open_with qkq
-mkdir WII
-open_with unrar
 open_with unrar e
 open_with .
 shell dm
@@ -18,10 +10,8 @@ shell unzip stavarex_spellright.zip
 shell ncdu
 rename Downloads
 rename airboard retur.pdf
-find w
 open_with k
 open_with gimp
-open_with
 find §
 shell mv octonauterna\ s01e3 octonauterna\ s01e33.mp4
 1
@@ -42,9 +32,19 @@ shell git pull
 shell mkdir completed
 shell svtplay-dl https://www.svtplay.se/video/1176197/pepparkornen/25-4-19-30?start=auto
 shell mkdir season 01
-shell mkdir "Season 01"
 shell mkdir "Season 02"
 bulkrename 
-delete
+rename "Skapa regler for inkorgen.mkv"
+find w
+open_with wal -a 85 -i "$@"
+rename Agents of S.H.I.E.L.D
+shell mkdir "Star Trek Discovery"
+shell mkdir "Season 01"
+open_with
+shell tm
+shell mkdir Dystopian
 open_with 
+delete
+rename The Boss Baby 2017 SwedishDVDiSO
+open_with extract %s
 open_with 11

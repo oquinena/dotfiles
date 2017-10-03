@@ -1,3 +1,5 @@
 #!/bin/bash
 
-uptime -p | awk '{print $2"h" $4"m"}'
+tid=$("awk '{print $0/3600;}' /proc/uptime")
+
+echo tid

@@ -18,6 +18,9 @@ alert = #bd2c40
 ;margin-top = -5
 ;margin-bottom = 5
 
+[settings]
+screenchange-reload = true
+
 [bar/daniels]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
@@ -25,7 +28,7 @@ height = 40
 offset-x = 0
 offset-y = 0
 
-;background = ${xrdb:color9}
+;background = ${xrdb:color2}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -50,12 +53,14 @@ font-3 = FontAwesome:pixelsize=20;2
 
 modules-left = bspwm xwindow 
 modules-center = 
-modules-right = cpu vpncheck_hemma vpncheck_angkarr weather temperature uptime backlight volume xkeyboard memory wifi eth battery date
+modules-right = cpu vpncheck_hemma vpncheck_angkarr temperature backlight volume memory wifi eth battery date
 
 tray-position = right
-tray-padding = 0
+tray-padding = 1
 ;tray-transparent = true
-tray-background = #66000000
+tray-background = ${root.background}
+tray-scale = 1.0
+tray-maxsize = 28
 
 wm-restack = bspwm
 ;wm-restack = i3
@@ -68,10 +73,13 @@ scroll-down = bspwm-deskprev
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
+locale = sv_SE.UTF8
+
 
 [module/xwindow]
 type = internal/xwindow
-label = " %title:0:80:...% "
+label = Window: %title%
+label-maxlen = 100
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -84,7 +92,8 @@ type = internal/xkeyboard
 ;label-layout = %layout%
 
 ;label-indicator-padding = 2
-label-indicator-background = #1e1e1e 
+;label-indicator-background = #cc1e1e1e 
+label-indicator-foreground = #50f442
 ;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
@@ -176,7 +185,7 @@ toggle-on-foreground = ${colors.primary}
 toggle-off-foreground = #66
 
 [module/backlight]
-type = internal/xbacklight
+type = internal/backlight
 card = intel_backlight
 
 format = <label> <bar>
@@ -247,7 +256,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s20u6
+interface = enp0s31f6
 interval = 3.0
 
 ;format-connected-underline = #55aa55
@@ -256,7 +265,7 @@ format-connected-foreground-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 ;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% disconnected
+;label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
