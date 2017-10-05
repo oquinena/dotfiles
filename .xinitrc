@@ -26,7 +26,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
-wal -a 80 -i "/home/nomad/Pictures/Wallpapers/Dystopian/339128.jpg" & # Testing, applying colorscheme from pywal
+wal -a 80 -i "/home/nomad/Pictures/Wallpapers/Landscape/03816_mythicsilenceastheywanderinthemist_3840x2160.jpg" & # Testing, applying colorscheme from pywal
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 WM=${3:-bspwm}

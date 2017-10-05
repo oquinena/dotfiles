@@ -9,25 +9,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
 Plugin 'sjl/badwolf'
 Plugin 'ctrlp.vim'
 Plugin 'dylanaraps/wal.vim'
-"Plugin 'Powershell-FTDetect'  
 Plugin 'itchyny/lightline.vim'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'scrooloose/nerdtree'
 Plugin 'wombat256.vim'  
-"Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'textutil.vim'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'morhetz/gruvbox'
@@ -36,16 +27,6 @@ Plugin 'Syntastic'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin' " The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,21 +39,6 @@ filetype plugin indent on    " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" Default configuration file for Vim
-" $Id$
-
-" Written by Aron Griffis <agriffis@gentoo.org>
-" Modified by Ryan Phillips <rphillips@gentoo.org>
-" Modified some more by Ciaran McCreesh <ciaranm@gentoo.org>
-" Added Redhat's vimrc info by Seemant Kulleen <seemant@gentoo.org>
-
-" You can override any of these settings on a global basis via the
-" "/etc/vim/vimrc.local" file, and on a per-user basis via "~/.vimrc". You may
-" need to create these.
-
 " {{{ General settings
 " The following are some sensible defaults for Vim for most users.
 " We attempt to change as little as possible from Vim's defaults,
@@ -268,6 +234,8 @@ set laststatus=2
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set mouse=a
+set clipboard=unnamedplus
 
 let g:lightline = {
       \ 'component': {
@@ -295,6 +263,3 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-set mouse=a
-set clipboard=unnamedplus

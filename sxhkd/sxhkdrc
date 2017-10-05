@@ -1,7 +1,6 @@
 #
 # wm independent hotkeys
 #
-
 # Lock screen
 alt + shift + {x,o}
     {$HOME/bin/i3lock-daniel3.sh,xtrlock}
@@ -30,10 +29,10 @@ super + Return
 	google-chrome-stable	
 
 # program launcher
-#alt + d
-#    rofi -modi combi -show combi -combi-modi run,drun -font "Fira Mono for Powerline 22" -lines 1 -columns 10 -width 100 -location 2
 alt + d
-    j4-dmenu-desktop --dmenu="dmenu -i -nb '#000000' -nf '#ffffff' -sb '#1e1e1e' -sf '#ffffff' -fn 'Ubuntu Condensed:8' -p 'Search: '"
+    rofi -modi combi -show combi -combi-modi run,drun -font "Fira Mono for Powerline 22" -width 30 -opacity 50
+#alt + d
+#    j4-dmenu-desktop --dmenu='dmenu -i -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "Ubuntu Condensed:8" -p "Search: "'
 
 
 # make sxhkd reload its configuration files:
@@ -179,9 +178,11 @@ shift + XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
 XF86MonBrightnessUp 
-	light -A 5 
+	light -A 10
 XF86MonBrightnessDown
-	light -U 5
+	light -U 10
+XF86AudioMicMute
+    amixer -D pulse set Capture toggle
 
 # Screenshot
 Print

@@ -41,7 +41,7 @@ border-bottom.size = 2
 border-bottom-color = #333
 
 spacing = 1
-padding-left = 0
+padding-left = 5
 padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
@@ -51,9 +51,9 @@ font-1 = "Ubuntu Condensed:pixelsize=28;3"
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
 font-3 = FontAwesome:pixelsize=20;2
 
-modules-left = bspwm xwindow 
-modules-center = 
-modules-right = cpu vpncheck_hemma vpncheck_angkarr temperature backlight volume memory wifi eth battery date
+modules-left = backlight volume xwindow
+modules-center = bspwm
+modules-right = cpu vpncheck_hemma vpncheck_angkarr temperature memory wifi eth battery date
 
 tray-position = right
 tray-padding = 1
@@ -79,7 +79,7 @@ locale = sv_SE.UTF8
 [module/xwindow]
 type = internal/xwindow
 label = Window: %title%
-label-maxlen = 100
+label-maxlen = 90
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -191,7 +191,7 @@ card = intel_backlight
 format = <label> <bar>
 label =  
 
-bar-width = 6
+bar-width = 9
 bar-indicator = │
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
@@ -294,9 +294,9 @@ label-volume = "  "
 format-muted-prefix = ""
 format-muted-foreground = #8e0707
 ;format-muted-foreground = ${colors.foreground}
-label-muted = "muted"
+label-muted = "   muted  "
 
-bar-volume-width = 6
+bar-volume-width = 9
 ;bar-volume-foreground-0 = #55aa55
 ;bar-volume-foreground-1 = #55aa55
 ;bar-volume-foreground-2 = #55aa55

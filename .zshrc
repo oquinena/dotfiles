@@ -53,6 +53,8 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git python systemd adb web-search colored-man-pages colorized compleat wd extract)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.cache/wal/colors.sh
+
 
 # User configuration
 
@@ -67,9 +69,6 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
