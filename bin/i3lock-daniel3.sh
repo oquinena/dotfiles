@@ -15,9 +15,9 @@ pre_lock() {
     #mpc pause
     scrot "$tmpbg"
     convert "$tmpbg" -scale 5% -scale 2000% "$tmpbg"
-    convert -type GrayScaleMatte "$tmpbg"
+    convert -blur 2x3 "$tmpbg"
     convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-    umount /mnt/dcserver 
+    sudo umount -f -l /mnt/dcserver /mnt/tv
     #killall -SIGUSR1 dunst
     return
 }

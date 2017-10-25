@@ -29,8 +29,10 @@ super + Return
 	google-chrome-stable	
 
 # program launcher
+#alt + d
+#    rofi -modi combi -show combi -combi-modi drun,run -font "Fira Mono for Powerline 22" -width 30 -opacity 50 -show-icons -location 6 -lines 5
 alt + d
-    rofi -modi combi -show combi -combi-modi run,drun -font "Fira Mono for Powerline 22" -width 30 -opacity 50
+    rofi -modi combi -show combi -combi-modi drun,run -config $HOME/.config/rofi/drun_conf
 #alt + d
 #    j4-dmenu-desktop --dmenu='dmenu -i -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "Ubuntu Condensed:8" -p "Search: "'
 

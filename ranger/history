@@ -1,32 +1,3 @@
-open_with .keep
-open_with dolpin-emu
-open_with dolphin-emu
-shell unzip stavarex_spellright.zip
-shell ncdu
-rename Downloads
-rename airboard retur.pdf
-open_with k
-open_with gimp
-find §
-shell mv octonauterna\ s01e3 octonauterna\ s01e33.mp4
-1
-open_with extract
-shell extract wwr-wogoousa.rar
-find 
-open_with 1
-rename Music
-shell mkdir torrents
-
-rename torrents
-rename torrents§
-shell mkdir chrome
-rename wallpapers Wallpapers
-rename Wallpapers
-shell git pull
-shell mkdir completed
-shell svtplay-dl https://www.svtplay.se/video/1176197/pepparkornen/25-4-19-30?start=auto
-shell mkdir season 01
-shell mkdir "Season 02"
 bulkrename 
 rename "Skapa regler for inkorgen.mkv"
 find w
@@ -40,11 +11,40 @@ shell mkdir Dystopian
 rename The Boss Baby 2017 SwedishDVDiSO
 open_with extract %s
 rename "Jonathans schema HT17.jpeg"
-rename Jonathans schema HT17.jpeg
 open_with 15
 rename El-Capitan.jpg
-shell 
 rename worlds_end.jpg
-delete
+rename The Boss Baby.m4v
+rename Jonathans schema HT17.jpeg
+rename hidpi-font-replacement
+find 
+filter 
+shell 
+rename Skapa regler fvr personalmailen.mp4
+rename Dndra standardapp - Google Chrome och Adobe Reader.mp4
+rename Manualer
+rename Kompensatoriska hjälpmedel.docx
+rename PowerPoint 2010.docx
+rename Word 2010.docx
+rename mnt
+shell mkdir Tutorials
+shell touch mpv.conf
+rename niclas.html
+open_with vim %s
+open_with kkkkkkkkkkkk
+shell sudo rm -r .oh-my-zsh
+shell sudo rm -r Documents
+shell mkdir beta
+rename bios.exe
+shell mkdir "HP EliteBook 8470p"
 open_with 
+shell mkdir temp
+shell wal -i %s
+open_with q
+open_with 1
+rename Revolutioner Prov fördjupande Maria Holssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.docx
+rename Revolutioner Prov fördjupande Maria Holssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.docx
+open_with unzip %2
+shell unzip %s
 open_with 11
+delete

@@ -11,9 +11,9 @@ rofi.color-enabled: true
 !                  bg       border   separator
 rofi.color-window: #282828, #a89984, #a89984
 !                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: #282828, #ebdbb2, #32302f, #665c54, #fbf1c7
-rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
-rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
+rofi.color-normal: #CC282828, #ebdbb2, #32302f, #665c54, #fbf1c7
+rofi.color-active: #CCd79921, #282828, #d79921, #fabd2f, #282828
+rofi.color-urgent: #CCcc241d, #282828, #cc241d, #fb4934, #282828
 
 rofi.opacity: 80
 rofi.terminal: urxvt
@@ -33,11 +33,18 @@ URxvt.depth:		32
 URxvt.background:	rgba:0000/0000/0200/c800
 
 URxvt.scrollBar:	false
-URxvt.perl-ext:		default,url-select,matcher
+URxvt.perl-ext:		default,url-select,matcher,resize-font
 URxvt.saveLines:	5000
 URxvt.cursorBlink:	true
 URxvt.scrollWithBuffer:	false
 URxvt.scrollTtyKeypress: true 
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
@@ -75,45 +82,3 @@ URxvt.scrollTtyKeypress: true
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

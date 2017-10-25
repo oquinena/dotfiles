@@ -19,10 +19,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -38,64 +35,27 @@ DISABLE_AUTO_TITLE="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python systemd adb web-search colored-man-pages colorized compleat wd extract)
+plugins=(git python systemd adb web-search colored-man-pages colorized compleat wd extract zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.cache/wal/colors.sh
 
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias emerge='sudo emerge'
 alias nano='nano -w'
-alias chromium='chromium --force-device-scale-factor=2'
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
 alias spotify='spotify --force-device-scale-factor=2'
-#alias h="cd"
 alias mount="sudo mount"
-alias umount="sudo umount"
+alias u="sudo umount"
 alias t="/home/nomad/.config/ssh_tv.sh"
 alias d="/home/nomad/.config/ssh_dc.sh"
 alias dm="sshfs daoq@dcserver:/ /mnt/dcserver && cd /mnt/dcserver"
 alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
 alias nmap="sudo nmap"
 alias v="vim"
-alias poly-cfg="vim ~/.config/polybar/config"
 alias r="ranger"
 alias krebuild="sudo make -j8 && sudo make install modules_install && sudo genkernel ramdisk && sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias etc-update="sudo etc-update"
@@ -105,12 +65,4 @@ export PATH=~/bin:~/.local/bin:$PATH
 compinit
 
 export EDITOR="vim"
-
-### Setting Terminator title to active command ###
-case $TERM in
-    xterm*)
-        precmd () {print -Pn "\e]0;string\a"}
-        ;;
-esac
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -26,10 +26,14 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
-wal -a 80 -i "/home/nomad/Pictures/Wallpapers/Landscape/03816_mythicsilenceastheywanderinthemist_3840x2160.jpg" & # Testing, applying colorscheme from pywal
+# wal -a 85 -i "/home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg" & # Testing, applying colorscheme from pywal
+wal -R -a 85
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
-WM=${3:-bspwm}
+# start urxvt-daemon
+urxvtd -q -f -o
+
+WM=${2:-i3}
 
 case $WM in
 
@@ -42,8 +46,12 @@ case $WM in
 	###### I3-Gaps ######
 		xset s 600 &
 		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
-		#compton -f -b -c -C --backend glx &
-		exec i3 --shmlog-size=26214400 &
+		polybar daniels &
+		twmnd &
+		nm-applet &
+		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
+		/home/nomad/bin/toggle_touchpad.sh &
+		exec i3 
 		;;
 	bspwm)
 	###### Bspwm ######
@@ -67,7 +75,9 @@ case $WM in
 	xmonad)
 	###### XMonad #####
 		xsetroot -cursor_name left_ptr &
-		xmobar 
+		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
+		xmobar &
+		/home/nomad/bin/toggle_touchpad.sh &
 		exec /usr/bin/xmonad
 		;;
 	qtile)

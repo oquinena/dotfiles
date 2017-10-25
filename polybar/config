@@ -3,12 +3,12 @@
 
 [colors]
 ;background = #2F343F
-background = #99000000
-;background = ${xrdb:color2}
+background = #2C241E
+;background = ${xrdb:background}
 background-alt = #444
 ;foreground = #dfdfdf
-foreground = #d1d1d1
-;foreground = ${xrdb:color7}
+;foreground = #d1d1d1
+foreground = ${xrdb:color7}
 foreground-alt = #55
 primary = #ffd5a3
 secondary = #e60053
@@ -27,6 +27,8 @@ width = 100%
 height = 40
 offset-x = 0
 offset-y = 0
+fixed-center = true
+radius-bottom = 0.0  ;rounded corners radius-{top,bottom}
 
 ;background = ${xrdb:color2}
 background = ${colors.background}
@@ -40,7 +42,6 @@ underline-size = 2
 border-bottom.size = 2
 border-bottom-color = #333
 
-spacing = 1
 padding-left = 5
 padding-right = 0
 module-margin-left = 2
@@ -55,6 +56,9 @@ modules-left = backlight volume xwindow
 modules-center = bspwm
 modules-right = cpu vpncheck_hemma vpncheck_angkarr temperature memory wifi eth battery date
 
+;separator = | 
+dim-value = 1.0
+
 tray-position = right
 tray-padding = 1
 ;tray-transparent = true
@@ -63,17 +67,10 @@ tray-scale = 1.0
 tray-maxsize = 28
 
 wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
 locale = sv_SE.UTF8
+enable-ipc = true
 
 
 [module/xwindow]
@@ -108,6 +105,17 @@ label-mounted = %mountpoint%: %percentage_free%
 
 label-unmounted = %mountpoint%: not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = false
+icon-default = 
+label-occupied = %icon%
+label-active = %icon% 
+label-occupied-padding = 2
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -319,7 +327,7 @@ bar-volume-empty-font = 2
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 99
+full-at = 95
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
