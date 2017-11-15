@@ -3,7 +3,7 @@
 
 [colors]
 ;background = #2F343F
-background = #2C241E
+background = #171c33
 ;background = ${xrdb:background}
 background-alt = #444
 ;foreground = #dfdfdf
@@ -296,7 +296,7 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = "  "
+label-volume = "   "
 ;label-volume-foreground = #dfdfdf
 
 format-muted-prefix = ""
@@ -407,7 +407,7 @@ interval = 5
 label = ängkärr
 ;format-underline = #268bd2
 format-prefix = " "
-click-right = nmcli con down Ängkärr
+click-right = nmcli con down Angkarr
 
 [module/vpncheck_hemma]
 type = custom/script

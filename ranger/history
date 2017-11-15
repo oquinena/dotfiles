@@ -1,10 +1,3 @@
-bulkrename 
-rename "Skapa regler for inkorgen.mkv"
-find w
-open_with wal -a 85 -i "$@"
-rename Agents of S.H.I.E.L.D
-shell mkdir "Star Trek Discovery"
-shell mkdir "Season 01"
 open_with
 shell tm
 shell mkdir Dystopian
@@ -37,14 +30,21 @@ shell sudo rm -r Documents
 shell mkdir beta
 rename bios.exe
 shell mkdir "HP EliteBook 8470p"
-open_with 
 shell mkdir temp
 shell wal -i %s
 open_with q
-open_with 1
 rename Revolutioner Prov fördjupande Maria Holssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.docx
 rename Revolutioner Prov fördjupande Maria Holssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.docx
 open_with unzip %2
 shell unzip %s
+rename runners world marathon training guide.pdf
+rename Måndagsmöte 171106.docx
+shell mkdir Downloads
+open_with vim
+rename logotyp.PNG
 open_with 11
+open_with l
+open_with 
+open_with 1
+rename Daniel Svartvit.JPG
 delete

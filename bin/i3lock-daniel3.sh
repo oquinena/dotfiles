@@ -28,6 +28,7 @@ post_lock() {
     rm $tmpbg
     #sleep 1
     /home/nomad/.config/polybar/launch.sh & 
+    sudo numlock
     return
 }
 

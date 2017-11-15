@@ -1,5 +1,5 @@
-(wal -r &)
-setsid wal -r
+#(wal -r -t&)
+setsid wal -r -t
 # Path to your oh-my-zsh installation.
   export ZSH=/home/nomad/.oh-my-zsh
 
@@ -49,7 +49,7 @@ alias nano='nano -w'
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
 alias spotify='spotify --force-device-scale-factor=2'
 alias mount="sudo mount"
-alias u="sudo umount"
+alias umount="sudo umount"
 alias t="/home/nomad/.config/ssh_tv.sh"
 alias d="/home/nomad/.config/ssh_dc.sh"
 alias dm="sshfs daoq@dcserver:/ /mnt/dcserver && cd /mnt/dcserver"

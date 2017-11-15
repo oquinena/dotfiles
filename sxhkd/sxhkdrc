@@ -5,9 +5,12 @@
 alt + shift + {x,o}
     {$HOME/bin/i3lock-daniel3.sh,xtrlock}
 
+# Switch monitor output
+alt + ctrl + o
+    monitor.sh
 # Start ranger
 #alt + r
-#	urxvt -e xanger
+#	urxvt -e ranger
 
 # Toggle VPN-connections
 alt + shift + v
@@ -127,7 +130,7 @@ alt + {_,shift + }{1-9,0}
 # increase or decrease window gap
 alt + ctrl + {Up,Down}  
 	gap="$(bspc config window_gap)"; \
-	bspc config window_gap $(($gap{+,-}5))
+	bspc config window_gap $(($gap{+,-}10))
 
 #
 # preselect
@@ -180,9 +183,9 @@ shift + XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
 XF86MonBrightnessUp 
-	light -A 10
+	light -A 5
 XF86MonBrightnessDown
-	light -U 10
+	light -U 5
 XF86AudioMicMute
     amixer -D pulse set Capture toggle
 

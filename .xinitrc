@@ -1,39 +1,29 @@
-#xrandr --setprovideroutputsource modesetting NVIDIA-0
-#xrandr --auto
-
 xrandr --dpi 192 
 export GDK_SCALE=2 
 xcalib -d :0 ~/.config/P50_4k.icm 
 
-# Touchpad config
-#xinput --set-prop 13 "libinput Tapping Enabled" 1 &
-#xinput --set-prop 13 "libinput Natural Scrolling Enabled" 1 & 
-#xinput --set-prop 13 "libinput Accel Speed" 0.7 &
-
-#xinput --set-prop 11 "Device Enabled" 0 & # Turn off the bloody touchscreen
-
 # Powersaving off 
-xset -dpms
+#xset -dpms
 xset s off
 xset -b
 
 setxkbmap -option terminate:ctrl_alt_bksp
-#setxkbmap se
-#/home/nomad/bin/bluetooth-lock.py & #Lock screen when phone is not pinged
+sudo numlock
 
 ###### For gnome-keyring to work #######
+dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
 # wal -a 85 -i "/home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg" & # Testing, applying colorscheme from pywal
-wal -R -a 85
+wal -a 90 -i /home/nomad/Pictures/Wallpapers/Simple/red.jpg
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 # start urxvt-daemon
 urxvtd -q -f -o
 
-WM=${2:-i3}
+#WM=${3:-bspwm}
 
 case $WM in
 
@@ -49,17 +39,18 @@ case $WM in
 		polybar daniels &
 		twmnd &
 		nm-applet &
+        clipit &
 		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
 		/home/nomad/bin/toggle_touchpad.sh &
 		exec i3 
 		;;
-	bspwm)
+	*)
 	###### Bspwm ######
 		sxhkd &
 		polybar daniels &
 		twmnd &
 		nm-applet &
-		#clipit &
+		clipit &
 		blueman-applet &
 		xset s 600 &
 		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
@@ -67,10 +58,6 @@ case $WM in
 		xsetroot -cursor_name left_ptr &
 		/home/nomad/bin/toggle_touchpad.sh &
 		exec bspwm
-		;;
-	gnome)
-	###### Gnome ######
-		exec gnome-session
 		;;
 	xmonad)
 	###### XMonad #####
@@ -80,8 +67,14 @@ case $WM in
 		/home/nomad/bin/toggle_touchpad.sh &
 		exec /usr/bin/xmonad
 		;;
-	qtile)
-		polybar daniels &
+    dwm)
+    ##### dwm;) #####
+        polybar daniels &
+		twmnd &
+		nm-applet &
 		compton --config /home/nomad/.config/compton/compton.conf.20170903 &
-		exec qtile
+		xsetroot -cursor_name left_ptr &
+		/home/nomad/bin/toggle_touchpad.sh &
+        exec dwm
+        ;;
 esac
