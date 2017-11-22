@@ -57,7 +57,7 @@ alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
 alias nmap="sudo nmap"
 alias v="vim"
 alias r="ranger"
-alias krebuild="sudo make -j8 && sudo make install modules_install && sudo genkernel ramdisk && sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias krebuild="sudo mount /boot && sudo make -j8 && sudo make install modules_install && sudo genkernel ramdisk && sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias etc-update="sudo etc-update"
 
 autoload -U compinit promptinit
