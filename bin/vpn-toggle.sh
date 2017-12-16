@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wlan="wlp6s0"
+wlan="wlp4s0"
 
 vpn="$(nmcli | grep "VPN connection" | awk '{print $1}')"
 connection="$(nmcli d show $wlan | grep GENERAL.CONNECTION | awk '{ print $2 }')"

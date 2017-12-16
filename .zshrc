@@ -6,6 +6,7 @@ setsid wal -r -t
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -44,10 +45,10 @@ plugins=(git python systemd adb web-search colored-man-pages colorized compleat 
 source $ZSH/oh-my-zsh.sh
 source ~/.cache/wal/colors.sh
 
-alias emerge='sudo emerge'
-alias nano='nano -w'
+alias emerge="sudo emerge"
+alias nano="nano -w"
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
-alias spotify='spotify --force-device-scale-factor=2'
+alias spotify="spotify --force-device-scale-factor=2"
 alias mount="sudo mount"
 alias umount="sudo umount"
 alias t="/home/nomad/.config/ssh_tv.sh"

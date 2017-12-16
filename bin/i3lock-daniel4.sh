@@ -1,28 +1,33 @@
 #!/bin/bash
 
+# Example locker script -- demonstrates how to use the --transfer-sleep-lock
+# option with i3lock's forking mode to delay sleep until the screen is locked.
+
+## CONFIGURATION ##############################################################
 
 # Variables
-icon="$HOME/.config/i3/i3lock_icon3.png"
+icon="$HOME/.config/i3/i3lock_icon2.png"
 tmpbg="$(mktemp /tmp/screen-XXXXXXXXXX.png)"
-i3lock_options="-u -i $tmpbg"
+i3lock_options="-e -i $tmpbg --insidecolor=28282899 --ringcolor=EBDBB2FF --line-uses-inside --keyhlcolor=FB4934FF --bshlcolor=FB4934FF --separatorcolor=282828FF --insidevercolor=FABD2F99 --insidewrongcolor=FB493499 --ringvercolor=EBDBB2FF --ringwrongcolor=EBDBB2FF --indpos='x+100:y+980' --radius=27 --veriftext='' --wrongtext=''"
 
 # Run before starting the locker
 pre_lock() {
     #mpc pause
     scrot "$tmpbg"
-    convert "$tmpbg" -scale 5% -scale 2000% -gamma 0.5 "$tmpbg"
-    convert -blur 2x3 "$tmpbg"
-    convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-    if ( $(ifconfig enp0s31f6 | grep -o UP) ! "UP" ) then  
-        sudo umount -f -l /mnt/dcserver /mnt/tv
-    fi
+    convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
+    convert "$tmpbg" -gravity center -composite -matte "$tmpbg"
+    sudo umount -f -l /mnt/dcserver /mnt/tv
+    #killall -SIGUSR1 dunst
     return
 }
 
 # Run after the locker exits
 post_lock() {
+    #killall -SIGUSR2 dunst 
     rm $tmpbg
+    #sleep 1
     /home/nomad/.config/polybar/launch.sh & 
+    sudo numlock
     return
 }
 

@@ -1,17 +1,6 @@
-shell tm
-shell mkdir Dystopian
-rename The Boss Baby 2017 SwedishDVDiSO
-open_with extract %s
-rename "Jonathans schema HT17.jpeg"
-open_with 15
-rename El-Capitan.jpg
-rename worlds_end.jpg
-rename The Boss Baby.m4v
 rename Jonathans schema HT17.jpeg
 rename hidpi-font-replacement
-find 
 filter 
-shell 
 rename Skapa regler fvr personalmailen.mp4
 rename Dndra standardapp - Google Chrome och Adobe Reader.mp4
 rename Manualer
@@ -41,10 +30,21 @@ rename Måndagsmöte 171106.docx
 shell mkdir Downloads
 open_with vim
 rename logotyp.PNG
-open_with 11
 open_with l
 open_with 
-open_with 1
 rename Daniel Svartvit.JPG
 shell mkdir "The Deep (2015)"
+open_with j§
+rename Daniel de Oquinena anstallningsavtal.pdf
+open_with 11
+rename ubuntu-16.04.3-server-amd64.iso.torrent
+find *.jpg
+shell 
+cd 
+open_with 1
+shell mkdir roms
+shell mkdir s6edge
+shell mkdir "Black Mirror"
+rename serials.txt
+find 
 delete
