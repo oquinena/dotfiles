@@ -31,12 +31,10 @@ shell mkdir Downloads
 open_with vim
 rename logotyp.PNG
 open_with l
-open_with 
 rename Daniel Svartvit.JPG
 shell mkdir "The Deep (2015)"
 open_with j§
 rename Daniel de Oquinena anstallningsavtal.pdf
-open_with 11
 rename ubuntu-16.04.3-server-amd64.iso.torrent
 find *.jpg
 shell 
@@ -47,4 +45,6 @@ shell mkdir s6edge
 shell mkdir "Black Mirror"
 rename serials.txt
 find 
+open_with 
+open_with 11
 delete

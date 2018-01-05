@@ -17,13 +17,13 @@ export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
 # wal -a 85 -i "/home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg" & # Testing, applying colorscheme from pywal
-wal -a 90 -i /home/nomad/Pictures/Wallpapers/Landscape/a751nirqc7001.jpg
+wal -a 90 -i /home/nomad/Pictures/Wallpapers/StarWars/baNOBr5.jpg
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 # start urxvt-daemon
 urxvtd -q -f -o
 
-WM=${4:-xmonad}
+WM=${3:-bspwm}
 
 case $WM in
 
