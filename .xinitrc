@@ -17,7 +17,7 @@ export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
 # wal -a 85 -i "/home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg" & # Testing, applying colorscheme from pywal
-wal -a 90 -i /home/nomad/Pictures/Wallpapers/StarWars/baNOBr5.jpg
+wal -a 90 -i /home/nomad/Pictures/Wallpapers/StarWars/do7a5nug0mzz.jpg
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 # start urxvt-daemon

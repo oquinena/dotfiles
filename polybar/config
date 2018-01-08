@@ -54,7 +54,7 @@ font-3 = FontAwesome:pixelsize=20;2
 
 modules-left = backlight volume xwindow
 modules-center = bspwm
-modules-right = cpu vpncheck_hemma vpncheck_angkarr temperature memory wifi eth battery date
+modules-right = cpu vpncheck_hemma vpncheck_bahnhof vpncheck_angkarr temperature memory wifi eth battery date
 
 ;separator = | 
 dim-value = 1.0
@@ -411,9 +411,18 @@ click-right = nmcli con down Angkarr
 
 [module/vpncheck_hemma]
 type = custom/script
-exec = pgrep pptp
+exec = "nmcli | grep -o Hemma"
 interval = 5
 label = hemma
+;format-underline = #268bd2
+format-prefix = " "
+click-right = nmcli con down Hemma
+
+[module/vpncheck_bahnhof]
+type = custom/script
+exec = "nmcli | grep -o Bahnhof"
+interval = 5
+label = bahnhof
 ;format-underline = #268bd2
 format-prefix = " "
 click-right = nmcli con down Hemma
