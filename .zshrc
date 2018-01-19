@@ -40,7 +40,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python systemd adb web-search colored-man-pages colorized compleat wd extract zsh-completions)
+plugins=(git python systemd adb web-search colored-man-pages colorize compleat wd extract zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.cache/wal/colors.sh

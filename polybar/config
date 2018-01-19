@@ -3,8 +3,8 @@
 
 [colors]
 ;background = #2F343F
-background = #171c33
-;background = ${xrdb:background}
+;background = #1E1B1B
+background = ${xrdb:color0}
 background-alt = #444
 ;foreground = #dfdfdf
 ;foreground = #d1d1d1
@@ -202,17 +202,17 @@ label = 
 bar-width = 9
 bar-indicator = │
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
+bar-indicator-font = 3
 bar-fill = ─
-bar-fill-font = 2
+bar-fill-font = 3
 ;bar-fill-foreground = #9f78e1
 bar-empty = ─
-bar-empty-font = 2
+bar-empty-font = 3
 ;bar-empty-foreground = ${colors.foreground-alt}
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 ;format-underline = #f90000

@@ -1,9 +1,3 @@
-rename Jonathans schema HT17.jpeg
-rename hidpi-font-replacement
-filter 
-rename Skapa regler fvr personalmailen.mp4
-rename Dndra standardapp - Google Chrome och Adobe Reader.mp4
-rename Manualer
 rename Kompensatoriska hjälpmedel.docx
 rename PowerPoint 2010.docx
 rename Word 2010.docx
@@ -37,14 +31,20 @@ open_with j§
 rename Daniel de Oquinena anstallningsavtal.pdf
 rename ubuntu-16.04.3-server-amd64.iso.torrent
 find *.jpg
-shell 
 cd 
-open_with 1
 shell mkdir roms
 shell mkdir s6edge
 shell mkdir "Black Mirror"
 rename serials.txt
 find 
+shell 
+rename Instruktion
 open_with 
-open_with 11
+open_with qq
+open_with 1
+rename bedömning
+shell mkdir julias
+rename Therees Mörman2.docx
 delete
+rename Jonathans schema.PDF
+open_with 11
