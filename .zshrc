@@ -64,6 +64,7 @@ alias etc-update="sudo etc-update"
 autoload -U compinit promptinit
 export PATH=~/bin:~/.local/bin:$PATH
 compinit
+set -o vi
 
 export EDITOR="vim"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

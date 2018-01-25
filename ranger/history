@@ -45,6 +45,6 @@ open_with 1
 rename bedömning
 shell mkdir julias
 rename Therees Mörman2.docx
-delete
 rename Jonathans schema.PDF
 open_with 11
+delete
