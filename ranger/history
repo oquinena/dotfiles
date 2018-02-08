@@ -1,5 +1,3 @@
-rename Kompensatoriska hjälpmedel.docx
-rename PowerPoint 2010.docx
 rename Word 2010.docx
 rename mnt
 shell mkdir Tutorials
@@ -39,12 +37,14 @@ rename serials.txt
 find 
 shell 
 rename Instruktion
-open_with 
 open_with qq
 open_with 1
 rename bedömning
 shell mkdir julias
 rename Therees Mörman2.docx
 rename Jonathans schema.PDF
-open_with 11
+open_with 
+open_with extract
+bulkrename 
 delete
+open_with 11

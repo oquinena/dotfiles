@@ -23,7 +23,7 @@ wal -a 90 -i /home/nomad/Pictures/Wallpapers/StarWars/do7a5nug0mzz.jpg
 # start urxvt-daemon
 urxvtd -q -f -o
 
-WM=${3:-bspwm}
+WM="${$1:-bspwm}"
 
 case $WM in
 

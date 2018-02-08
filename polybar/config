@@ -212,7 +212,7 @@ bar-empty-font = 3
 
 [module/cpu]
 type = internal/cpu
-interval = 1
+interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 ;format-underline = #f90000
