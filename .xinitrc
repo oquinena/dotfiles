@@ -23,28 +23,28 @@ wal -a 90 -i /home/nomad/Pictures/Wallpapers/StarWars/do7a5nug0mzz.jpg
 # start urxvt-daemon
 urxvtd -q -f -o
 
-WM="${$1:-bspwm}"
+#WM=${$1:-bspwm}
 
-case $WM in
+#case $WM in
 
-	awesome)
+#	awesome)
 	###### AwesomeWM ######
-	compton -f -b -c -C --backend glx &
-		exec awesome
-		;;
-    i3)
+#	compton -f -b -c -C --backend glx &
+#		exec awesome
+#		;;
+#    i3)
 	###### I3-Gaps ######
-		xset s 600 &
-		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
-		polybar daniels &
-		twmnd &
-		nm-applet &
-        clipit &
-		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
-		/home/nomad/bin/toggle_touchpad.sh &
-		exec i3 
-		;;
-	bspwm)
+#		xset s 600 &
+#		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
+#		polybar daniels &
+#		twmnd &
+#		nm-applet &
+#        clipit &
+#		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
+#		/home/nomad/bin/toggle_touchpad.sh &
+#		exec i3 
+#		;;
+#	bspwm)
 	###### Bspwm ######
 		sxhkd &
 		polybar daniels &
@@ -58,23 +58,23 @@ case $WM in
 		xsetroot -cursor_name left_ptr &
 		/home/nomad/bin/toggle_touchpad.sh &
 		exec bspwm
-		;;
-	xmonad)
+#		;;
+#	xmonad)
 	###### XMonad #####
-		xsetroot -cursor_name left_ptr &
-		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
-		#xmobar &
-		#/home/nomad/bin/toggle_touchpad.sh &
-		exec /usr/bin/xmonad
-		;;
-    dwm)
-    #### dwm;) #####
-        polybar daniels &
-		twmnd &
-		nm-applet &
-		compton --config /home/nomad/.config/compton/compton.conf.20170903 &
-		xsetroot -cursor_name left_ptr &
-		/home/nomad/bin/toggle_touchpad.sh &
-       exec dwm
-        ;;
-esac
+#		xsetroot -cursor_name left_ptr &
+#		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
+#		#xmobar &
+#		#/home/nomad/bin/toggle_touchpad.sh &
+#		exec /usr/bin/xmonad
+#		;;
+#    dwm)
+#    #### dwm;) #####
+#        polybar daniels &
+#		twmnd &
+#		nm-applet &
+#		compton --config /home/nomad/.config/compton/compton.conf.20170903 &
+#		xsetroot -cursor_name left_ptr &
+#		/home/nomad/bin/toggle_touchpad.sh &
+#       exec dwm
+#        ;;
+#esac

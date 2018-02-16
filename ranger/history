@@ -1,4 +1,3 @@
-rename Word 2010.docx
 rename mnt
 shell mkdir Tutorials
 shell touch mpv.conf
@@ -47,4 +46,5 @@ open_with
 open_with extract
 bulkrename 
 delete
+open_with §
 open_with 11
