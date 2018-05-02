@@ -1,4 +1,5 @@
-wal -R > /dev/null 
+export TERM="xterm-256color"
+(cat ~/.cache/wal/sequences &)
 export ZSH=/home/nomad/.oh-my-zsh
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -10,7 +11,7 @@ DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git python systemd adb web-search colored-man-pages colorize compleat wd extract zsh-completions)
+plugins=(git python systemd adb web-search colored-man-pages colorize compleat wd extract zsh-completions svn)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.cache/wal/colors.sh
@@ -21,7 +22,7 @@ alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps
 alias spotify="spotify --force-device-scale-factor=2"
 alias mount="sudo mount"
 alias umount="sudo umount"
-alias t="/home/nomad/.config/ssh_tv.sh"
+alias t="~/.config/ssh_tv.sh"
 alias d="/home/nomad/.config/ssh_dc.sh"
 alias dm="sshfs daoq@dcserver:/ /mnt/dcserver && cd /mnt/dcserver"
 alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
@@ -30,11 +31,19 @@ alias v="vim"
 alias r="ranger"
 alias krebuild="sudo mount /boot && sudo make -j8 && sudo make install modules_install && sudo genkernel ramdisk && sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias etc-update="sudo etc-update"
+alias oscar="toilet Oscar"
+alias axel="toilet Axel"
+alias reboot="sudo reboot"
 
 autoload -U compinit promptinit
 export PATH=~/bin:~/.local/bin:$PATH
 compinit
-set -o vi
+#set -o vi
 
 export EDITOR="vim"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function zle-line-init () { echoti smkx }
+function zle-line-finish () { echoti rmkx }
+zle -N zle-line-init
+zle -N zle-line-finish

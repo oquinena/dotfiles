@@ -1,6 +1,8 @@
-xrandr --dpi 192 
-export GDK_SCALE=2 
-xcalib -d :0 ~/.config/P50_4k.icm 
+#!/bin/bash
+
+#xrandr --dpi 192 
+#export GDK_SCALE=2 
+#xcalib -d :0 ~/.config/P50_4k.icm 
 
 # Powersaving off 
 #xset -dpms
@@ -8,7 +10,8 @@ xset s off
 xset -b
 
 setxkbmap -option terminate:ctrl_alt_bksp
-sudo numlock
+xset r rate 250 60
+#sudo numlock
 
 ###### For gnome-keyring to work #######
 #dbus-update-activation-environment --systemd DISPLAY
@@ -17,11 +20,12 @@ export SSH_AUTH_SOCK
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources # Add colorscheme from .Xresources
 # wal -a 85 -i "/home/nomad/Pictures/Wallpapers/Simple/firewatch.jpg" & # Testing, applying colorscheme from pywal
-wal -a 90 -i /home/nomad/Pictures/Wallpapers/Simple/red.jpg
 #redshift-gtk -l 59.334591:18.063240 & # Change color temp based on location
 
 # start urxvt-daemon
-urxvtd -q -f -o
+#urxvtd -q -f -o
+xinput --set-prop 12 "Device Enabled" 0
+export $terminal="st"
 
 #WM=${$1:-bspwm}
 
@@ -47,17 +51,20 @@ urxvtd -q -f -o
 #	bspwm)
 	###### Bspwm ######
 		sxhkd &
-		polybar daniels &
+		~/.config/polybar/launch_polybar.sh &
 		twmnd &
 		nm-applet &
 		clipit &
 		blueman-applet &
 		xset s 600 &
-		xss-lock -l -- $HOME/bin/i3lock-daniel3.sh &
-		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
+		xss-lock -l -- ~/bin/lock &
+		#compton --config ~/.config/compton/compton.conf.20170903 & # compositor 
 		xsetroot -cursor_name left_ptr &
-		/home/nomad/bin/toggle_touchpad.sh &
-		exec bspwm
+		~/bin/toggle_touchpad.sh &
+        wal -a 90 -i /home/nomad/Pictures/Wallpapers/2D_moonlight.png
+        feh --bg-tile /home/nomad/Pictures/Wallpapers/2D_moonlight.png 
+        slack -u
+        exec bspwm
 #		;;
 #	xmonad)
 	###### XMonad #####

@@ -11,12 +11,18 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Puppet-Syntax-Highlighting'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/badwolf'
+Plugin 'jbosslog'
 Plugin 'ctrlp.vim'
 Plugin 'dylanaraps/wal.vim'
-Plugin 'itchyny/lightline.vim'
+"Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Windows-PowerShell-File-Type-Plugin'
 Plugin 'reedes/vim-colors-pencil'
+Plugin 'Windows-PowerShell-Syntax-Plugin'
 Plugin 'scrooloose/nerdtree'
 Plugin 'wombat256.vim'  
 Plugin 'textutil.vim'
@@ -244,13 +250,15 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 if !has('gui_running')
 	  set t_Co=256
   endif
 
-colorscheme wal
-" set background=dark
+colorscheme gruvbox
+set background=dark
 
 function! s:goyo_enter()
     colorscheme pencil

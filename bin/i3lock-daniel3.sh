@@ -10,11 +10,11 @@ i3lock_options="-u -i $tmpbg"
 pre_lock() {
     #mpc pause
     scrot "$tmpbg"
-    convert "$tmpbg" -scale 5% -scale 2000% -gamma 0.5 "$tmpbg"
+    convert "$tmpbg" -scale 20% -scale 500% -gamma 0.5 "$tmpbg"
     convert -blur 2x3 "$tmpbg"
     convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
     if ( $(ifconfig enp0s31f6 | grep -o UP) ! "UP" ) then  
-        sudo umount -f -l /mnt/dcserver /mnt/tv
+        sudo umount -f -l /mnt/tv
     fi
     return
 }
@@ -22,7 +22,7 @@ pre_lock() {
 # Run after the locker exits
 post_lock() {
     rm $tmpbg
-    /home/nomad/.config/polybar/launch.sh & 
+    #/home/nomad/.config/polybar/launch_polybar.sh & 
     return
 }
 

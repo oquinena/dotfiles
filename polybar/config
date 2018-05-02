@@ -22,9 +22,9 @@ alert = #bd2c40
 screenchange-reload = true
 
 [bar/daniels]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:}
 width = 100%
-height = 40
+height = 20
 offset-x = 0
 offset-y = 0
 fixed-center = true
@@ -47,14 +47,14 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = "Ubuntu Condensed:pixelsize=28;3"
-font-1 = "Ubuntu Condensed:pixelsize=28;3"
+font-0 = "Ubuntu Condensed:pixelsize=13;3"
+font-1 = "Ubuntu Condensed:pixelsize=14;3"
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
-font-3 = FontAwesome:pixelsize=20;2
+font-3 = FontAwesome:pixelsize=10;2
 
 modules-left = backlight volume xwindow
 modules-center = bspwm
-modules-right = cpu vpncheck_hemma vpncheck_bahnhof vpncheck_angkarr temperature memory wifi eth battery date
+modules-right = vpncheck_hemma vpncheck_bahnhof memory wifi eth battery date
 
 ;separator = | 
 dim-value = 1.0
@@ -69,14 +69,14 @@ tray-maxsize = 28
 wm-restack = bspwm
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
-locale = sv_SE.UTF8
+locale = en_US.UTF8
 enable-ipc = true
 
 
 [module/xwindow]
 type = internal/xwindow
 label = Window: %title%
-label-maxlen = 90
+label-maxlen = 50
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -199,7 +199,7 @@ card = intel_backlight
 format = <label> <bar>
 label =  
 
-bar-width = 9
+bar-width = 5
 bar-indicator = │
 bar-indicator-foreground = #ff
 bar-indicator-font = 3
@@ -230,7 +230,7 @@ label = %percentage_used%%
 [module/wifi]
 type = custom/script
 interval = 60
-exec = "nmcli d show wlp4s0 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
+exec = "nmcli d show wlp2s0 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
 format-prefix = " "
 ;format-underline = #9f78e1
 format-prefix-foreground = ${colors.foreground}
@@ -244,7 +244,7 @@ format-prefix-foreground = ${colors.foreground}
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
@@ -302,9 +302,9 @@ label-volume = "   "
 format-muted-prefix = ""
 format-muted-foreground = #8e0707
 ;format-muted-foreground = ${colors.foreground}
-label-muted = "   muted  "
+label-muted = "    muted    "
 
-bar-volume-width = 9
+bar-volume-width = 5
 ;bar-volume-foreground-0 = #55aa55
 ;bar-volume-foreground-1 = #55aa55
 ;bar-volume-foreground-2 = #55aa55
@@ -327,7 +327,7 @@ bar-volume-empty-font = 2
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 95
+full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
@@ -358,16 +358,16 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 75
+thermal-zone = 1
+warn-temperature = 80
 
 format = <ramp> <label>
 ;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 ;format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -399,15 +399,6 @@ menu-2-0 =  power off
 menu-2-0-exec = sudo shutdown -h now
 menu-2-1 =  cancel
 menu-2-1-exec = menu-open-0
-
-[module/vpncheck_angkarr]
-type = custom/script
-exec = pgrep openconnect
-interval = 5
-label = ängkärr
-;format-underline = #268bd2
-format-prefix = " "
-click-right = nmcli con down Angkarr
 
 [module/vpncheck_hemma]
 type = custom/script

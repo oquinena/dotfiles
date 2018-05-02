@@ -20,8 +20,9 @@ rofi.terminal: urxvt
 rofi.run-shell-command: {terminal} -e {cmd}
 
 
-URxvt.font: 		xft:Fira Mono for Powerline:style=Medium:size=11,xft:PowerlineSymbols:pixelsize=11,xft:Siji:size=20
+URxvt.font: 		xft:Liberation\ Mono:size=12:antialias=true:autohint=true,xft:Inconsolata\ for\ Powerline:pixelsize=11,xft:Arimo\ for\ Powerline:size=12
 !!URxvt.font          xft:Iosevka:style=Regular:size=11,xft:PowerlineSymbols:size=11
+URxvt.letterSpace:  1
 URxvt.allow_bold:	true 
 
 !! Fake transperancy

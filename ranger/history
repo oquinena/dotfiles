@@ -1,29 +1,3 @@
-rename mnt
-shell mkdir Tutorials
-shell touch mpv.conf
-rename niclas.html
-open_with vim %s
-open_with kkkkkkkkkkkk
-shell sudo rm -r .oh-my-zsh
-shell sudo rm -r Documents
-shell mkdir beta
-rename bios.exe
-shell mkdir "HP EliteBook 8470p"
-shell mkdir temp
-shell wal -i %s
-open_with q
-rename Revolutioner Prov fördjupande Maria Holssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.docx
-rename Revolutioner Prov fördjupande Maria Holssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.docx
-open_with unzip %2
-shell unzip %s
-rename runners world marathon training guide.pdf
-rename Måndagsmöte 171106.docx
-shell mkdir Downloads
-open_with vim
-rename logotyp.PNG
-open_with l
-rename Daniel Svartvit.JPG
-shell mkdir "The Deep (2015)"
 open_with j§
 rename Daniel de Oquinena anstallningsavtal.pdf
 rename ubuntu-16.04.3-server-amd64.iso.torrent
@@ -33,18 +7,44 @@ shell mkdir roms
 shell mkdir s6edge
 shell mkdir "Black Mirror"
 rename serials.txt
-shell 
 rename Instruktion
 open_with qq
-open_with 1
 rename bedömning
 shell mkdir julias
 rename Therees Mörman2.docx
 rename Jonathans schema.PDF
-open_with 
 open_with extract
 bulkrename 
 open_with §
+shell mkdir Pictures
+shell mkdir Wallpapers
+
+rename id_rsa.pub.old
+rename id_rsa.old
+rename id_rsa
+shell chmod a+x f2_install_docker-compose_1.4.0.sh
+open_with h
+shell 
+rename Call.The.Midwife.S07E07.720p.HDTV.x264-MTB[eztv].mkv
+shell mkdir TV
+shell sudo mkdir TV
+shell sudo chown nomad:nomad TV
+shell sudo rm stage3-amd64-systemd-20180218.tar.bz2
+open_with j
+open_with kk
+open_with 14
+open_with 12
+open_with 15
+rename Att planera ett textsamtal.docx
+shell mkdir Poseidon
+open_with l
+shell mkdir Screenshots
+open_with 1
+open_with javaws
 find 
-delete
 open_with 11
+open_with q
+open_with 
+open_with abiword
+open_with vim
+delete
