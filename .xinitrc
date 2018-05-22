@@ -25,7 +25,7 @@ export SSH_AUTH_SOCK
 # start urxvt-daemon
 #urxvtd -q -f -o
 xinput --set-prop 12 "Device Enabled" 0
-export $terminal="st"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 #WM=${$1:-bspwm}
 
@@ -51,27 +51,26 @@ export $terminal="st"
 #	bspwm)
 	###### Bspwm ######
 		sxhkd &
-		~/.config/polybar/launch_polybar.sh &
 		twmnd &
 		nm-applet &
 		clipit &
 		blueman-applet &
 		xset s 600 &
 		xss-lock -l -- ~/bin/lock &
-		#compton --config ~/.config/compton/compton.conf.20170903 & # compositor 
+    	compton --config ~/.config/compton/compton.conf.20170903 & # compositor 
 		xsetroot -cursor_name left_ptr &
 		~/bin/toggle_touchpad.sh &
-        wal -a 90 -i /home/nomad/Pictures/Wallpapers/2D_moonlight.png
-        feh --bg-tile /home/nomad/Pictures/Wallpapers/2D_moonlight.png 
-        slack -u
+        wal -i /home/nomad/Pictures/wallpapers/2D_moonlight.png
+        feh --bg-tile /home/nomad/Pictures/wallpapers/2D_moonlight.png 
+		~/.config/polybar/launch_polybar.sh &
         exec bspwm
 #		;;
 #	xmonad)
 	###### XMonad #####
 #		xsetroot -cursor_name left_ptr &
 #		compton --config /home/nomad/.config/compton/compton.conf.20170903 & # compositor 
-#		#xmobar &
-#		#/home/nomad/bin/toggle_touchpad.sh &
+#		xmobar &
+#		/home/nomad/bin/toggle_touchpad.sh &
 #		exec /usr/bin/xmonad
 #		;;
 #    dwm)

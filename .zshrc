@@ -34,6 +34,8 @@ alias etc-update="sudo etc-update"
 alias oscar="toilet Oscar"
 alias axel="toilet Axel"
 alias reboot="sudo reboot"
+alias vup="nmcli con up"
+alias vdown="nmcli con down"
 
 autoload -U compinit promptinit
 export PATH=~/bin:~/.local/bin:$PATH

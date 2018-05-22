@@ -1,9 +1,3 @@
-open_with j§
-rename Daniel de Oquinena anstallningsavtal.pdf
-rename ubuntu-16.04.3-server-amd64.iso.torrent
-find *.jpg
-cd 
-shell mkdir roms
 shell mkdir s6edge
 shell mkdir "Black Mirror"
 rename serials.txt
@@ -40,11 +34,17 @@ shell mkdir Poseidon
 open_with l
 shell mkdir Screenshots
 open_with 1
-open_with javaws
-find 
 open_with 11
 open_with q
-open_with 
 open_with abiword
 open_with vim
+open_with q§
+open_with javaws
+rename Sekretessavtal.pdf
+open_with 
 delete
+search oqui
+set vcs_aware true
+find 
+open_with
+open_with p7zip

@@ -21,8 +21,24 @@ alert = #bd2c40
 [settings]
 screenchange-reload = true
 
+[bar/extra]
+monitor = HDMI-1
+width = 100%
+height = 20
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+modules-center = bspwm
+
+font-0 = "Ubuntu Condensed:pixelsize=13;3"
+font-1 = "Ubuntu Condensed:pixelsize=14;3"
+font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
+font-3 = FontAwesome:pixelsize=10;2
+
 [bar/daniels]
-monitor = ${env:MONITOR:}
+;monitor = ${env:MONITOR:}
+monitor = eDP-1
 width = 100%
 height = 20
 offset-x = 0
@@ -52,9 +68,9 @@ font-1 = "Ubuntu Condensed:pixelsize=14;3"
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
 font-3 = FontAwesome:pixelsize=10;2
 
-modules-left = backlight volume xwindow
-modules-center = bspwm
-modules-right = vpncheck_hemma vpncheck_bahnhof memory wifi eth battery date
+modules-left =  bspwm xwindow
+modules-center =
+modules-right = volume backlight memory wifi eth battery date
 
 ;separator = | 
 dim-value = 1.0
@@ -119,10 +135,12 @@ label-occupied-padding = 2
 
 [module/bspwm]
 type = internal/bspwm
-ws-icon-default = x
 
+ws-icon-default = x
+;ws-icon-0 = web;
 ;label-focused = %index%
 label-focused = 
+;label-focused = %icon%
 ;label-focused-background = #1A000000
 ;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
@@ -293,7 +311,7 @@ format-prefix = 
 label = %date% %time%
 
 [module/volume]
-type = internal/pulseaudio
+type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 label-volume = "   "
