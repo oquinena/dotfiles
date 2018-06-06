@@ -8,8 +8,8 @@
 #bspc config external_rules_command "$(which external_rules)"
 
 #bspc monitor -d 1 2 3 4 5 6 7 8 9 
-bspc monitor eDP-1 -d 1 2 3 4 5 6
-bspc monitor HDMI-1 -d 7 8 9
+bspc monitor eDP1 -d 1 2 3 4 5 6
+bspc monitor HDMI1 -d 7 8 9
 
 bspc config border_width        	 3
 bspc config window_gap          	 10

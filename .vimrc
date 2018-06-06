@@ -242,6 +242,9 @@ set shiftwidth=4
 set expandtab
 set mouse=a
 set clipboard=unnamedplus
+set cursorline                       " Highligt the cursor line
+"set cursorcolumn                     " Highlight the column line
+set number                           " Show the line number
 
 let g:lightline = {
       \ 'component': {
