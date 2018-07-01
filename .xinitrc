@@ -60,8 +60,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
     	compton --config ~/.config/compton/compton.conf.20170903 & # compositor 
 		xsetroot -cursor_name left_ptr &
 		~/bin/toggle_touchpad.sh &
-        wal -i /home/nomad/Pictures/wallpapers/2D_moonlight.png
-        feh --bg-tile /home/nomad/Pictures/wallpapers/2D_moonlight.png 
+        wal -a 90 -i /home/nomad/Pictures/wallpapers/misty_trees.jpg
+        #feh --bg-tile /home/nomad/Pictures/wallpapers/2D_moonlight.png 
 		~/.config/polybar/launch_polybar.sh &
         exec bspwm
 #		;;

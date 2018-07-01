@@ -1,10 +1,3 @@
-open_with qq
-rename bedömning
-shell mkdir julias
-rename Therees Mörman2.docx
-rename Jonathans schema.PDF
-open_with extract
-bulkrename 
 open_with §
 shell mkdir Pictures
 shell mkdir Wallpapers
@@ -13,7 +6,6 @@ rename id_rsa.pub.old
 rename id_rsa.old
 rename id_rsa
 shell chmod a+x f2_install_docker-compose_1.4.0.sh
-shell 
 rename Call.The.Midwife.S07E07.720p.HDTV.x264-MTB[eztv].mkv
 shell mkdir TV
 shell sudo mkdir TV
@@ -42,9 +34,17 @@ open_with
 open_with p7zip
 open_with vim
 open_with jdgui
-open_with 
 open_with h
 open_with jd-gui
 shell screenshots
 shell mkdir screenshots
+rename fast2_5_2_35_0.zip
+open_with extra
+shell §
+rename MBT-5.2.0-2017-03-10_1030.zip
+shell 
+rename rsbesiktning2.log
+rename borlange_vpn_ansokan.pdf
+open_with 
+rename wp.databasebackup.sql.gz
 delete
