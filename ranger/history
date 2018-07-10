@@ -32,7 +32,6 @@ set vcs_aware true
 find 
 open_with
 open_with p7zip
-open_with vim
 open_with jdgui
 open_with h
 open_with jd-gui
@@ -48,3 +47,4 @@ rename borlange_vpn_ansokan.pdf
 open_with 
 rename wp.databasebackup.sql.gz
 delete
+open_with vim

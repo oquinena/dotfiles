@@ -68,7 +68,7 @@ module-margin-right = 2
 font-0 = "Ubuntu Condensed:pixelsize=13;3"
 font-1 = "Ubuntu Condensed:pixelsize=14;3"
 font-2 = '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1' -f '-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' 
-font-3 = Font Awesome 5 Free:pixelsize=10;2
+font-3 = Font Awesome 5 Free Regular:pixelsize=10;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
 font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
@@ -270,8 +270,8 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected-underline = ${self.format-connected-underline}
+;format-connected-underline = #9f78e1
+;format-disconnected-underline = ${self.format-connected-underline}
 
 label-connected = %essid%
 label-disconnected = %ifname% disconnected
