@@ -33,6 +33,7 @@ Plugin 'Syntastic'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'alessandroyorba/sidonia'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -260,8 +261,9 @@ if !has('gui_running')
 	  set t_Co=256
   endif
 
-colorscheme gruvbox
-set background=dark
+set termguicolors
+  colorscheme sidonia
+"set background=dark
 
 function! s:goyo_enter()
     colorscheme pencil

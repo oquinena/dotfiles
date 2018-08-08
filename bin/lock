@@ -61,6 +61,7 @@ case "${LANG:-}" in
     pl_* ) text="Podaj hasło" ;; # Polish
     pt_* ) text="Digite a senha para desbloquear" ;; # Português
     ru_* ) text="Введите пароль" ;; # Russian
+    sv_* ) text="Ange lösenord" ;;
     * ) text="Type password to unlock" ;; # Default to English
 esac
 
