@@ -1,6 +1,6 @@
 #!/bin/env bash
-EXTERNAL_OUTPUT="HDMI1"
-INTERNAL_OUTPUT="eDP1"
+EXTERNAL_OUTPUT="HDMI-1"
+INTERNAL_OUTPUT="eDP-1"
 
 # if we don't have a file, start at zero
 if [ ! -f "/tmp/monitor_mode.dat" ] ; then

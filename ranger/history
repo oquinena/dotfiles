@@ -1,5 +1,3 @@
-open_with §
-shell mkdir Pictures
 shell mkdir Wallpapers
 
 rename id_rsa.pub.old
@@ -45,6 +43,8 @@ shell
 rename rsbesiktning2.log
 rename borlange_vpn_ansokan.pdf
 rename wp.databasebackup.sql.gz
-open_with 
 open_with vim
+shell mkdir Sigtuna
 delete
+open_with 
+q!
