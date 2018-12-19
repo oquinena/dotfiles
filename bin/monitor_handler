@@ -1,0 +1,6 @@
+#!/bin/bash
+
+case "$RANDRD_ACTION" in
+    "HDMI-1 connected") xrandr --output eDP-1 --auto --output HDMI-1 --right-of eDP-1 --auto;;
+    "HDMI-1 disconnected") xrandr --output eDP-1 --auto;;
+esac    
