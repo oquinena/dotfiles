@@ -184,9 +184,9 @@ shift + XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
 XF86MonBrightnessUp 
-	light -A 5
+	sudo light -A 5
 XF86MonBrightnessDown
-	light -U 5
+	sudo light -U 5
 XF86AudioMicMute
     amixer -D pulse set Capture toggle
 

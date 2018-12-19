@@ -1,13 +1,15 @@
 (cat ~/.cache/wal/sequences &)
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+HISTSIZE= HISTFILESIZE=
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=30
 export ZSH=/home/nomad/.oh-my-zsh
-export PATH=~/bin:~/.local/bin:$PATH
+export PATH=~/fast2/bin:~/bin:~/.local/bin:$PATH
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
