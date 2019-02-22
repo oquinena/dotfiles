@@ -34,11 +34,13 @@ alias etc-update="sudo etc-update"
 alias oscar="toilet Oscar"
 alias axel="toilet Axel"
 alias reboot="sudo reboot"
-alias vup="nmcli con up"
-alias vdown="nmcli con down"
+alias up="nmcli con up"
+alias down="nmcli con down"
 
 autoload -U compinit promptinit
 compinit
+promptinit; prompt gentoo
+zstyle ':completion::complete:*' use-cache 1
 #set -o vi
 
 export EDITOR="vim"

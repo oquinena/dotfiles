@@ -1,41 +1,9 @@
-rename Att planera ett textsamtal.docx
-shell mkdir Poseidon
-open_with l
-shell mkdir Screenshots
-open_with 1
-open_with 11
-open_with q
-open_with abiword
-open_with q§
-open_with javaws
-rename Sekretessavtal.pdf
-search oqui
-set vcs_aware true
-find 
-open_with
-open_with p7zip
-open_with jdgui
-open_with h
-open_with jd-gui
-shell screenshots
-shell mkdir screenshots
-rename fast2_5_2_35_0.zip
-open_with extra
-shell §
-rename MBT-5.2.0-2017-03-10_1030.zip
-rename rsbesiktning2.log
-rename borlange_vpn_ansokan.pdf
-rename wp.databasebackup.sql.gz
-shell mkdir Sigtuna
-q!
-shell mv wp.databasebackup.sql.gz wp.databasebackup.sql.gz.20180924
 shell mkdir Releases
 shell SVN
 shell mkdir DB
 shell mkdir SVN
 shell mkdir puppet
 shell mkdir CERT
-shell 
 rename fast2_5_3_42_2.zip
 quit!
 open_with oc
@@ -44,7 +12,39 @@ shell mkdir temp
 shell mkdir nationsgard
 shell mkdir mhs
 rename Tekniska rekommendationer - FAST2.pdf
-open_with vim
-open_with 
 rename changelog.pdf
+open_with vim
+rename fast2_logo_original.png
+rename wildcard_skinnskatteberg.cer
+rename wildcard_skinnskatteberg.key
+rename wildcard_skinnskatteberg_cacert.cer
+search linux
+rename f5vpn-linux.tgz
+open_with h
+rename F5VPN-linux.tgz
+shell mkdir clientfiles
+shell mkdir cert
+
+shell mkdir test
+shell mkdir prod
+shell 
+rename F5VPN-linux_kranglig_installation.tgz
+rename F5VPN-linux.zip
+rename F5VPN-linux_kranglig_installation_anvand_den_andra.tgz
+rename boras.catalina.errorlog.20190124
+search mastering
+delete'
+q!
+quit 
+search masterin
+search master
+rename .pdf
+rename Mastering Docker 2nd Edition.pdf
+rename wildcard.fast2.se
+q
+rename mittfast2.war
+shell
+rename 2019-02-19-07-57-10_3840x1080.jpg
+search mitt
 delete
+open_with 

@@ -2,7 +2,6 @@
   borderless = True
   focus = mouse
   title_font = Terminus (TTF) Medium 13
-  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]

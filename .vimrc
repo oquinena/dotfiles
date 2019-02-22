@@ -263,6 +263,7 @@ if !has('gui_running')
 
 set termguicolors
   colorscheme sidonia
+"   colorscheme wal
 "set background=dark
 
 function! s:goyo_enter()

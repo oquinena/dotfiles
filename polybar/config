@@ -3,8 +3,8 @@
 
 [colors]
 ;background = #2F343F
-;background = #1E1B1B
-background = ${xrdb:color0}
+background = #131934
+;background = ${xrdb:color0}
 background-alt = #444
 ;foreground = #dfdfdf
 ;foreground = #d1d1d1
