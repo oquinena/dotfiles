@@ -9,19 +9,19 @@ HISTSIZE= HISTFILESIZE=
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=30
 export ZSH=/home/nomad/.oh-my-zsh
-export PATH=~/fast2/bin:~/bin:~/.local/bin:$PATH
+export PATH=~/Fast2/bin:~/bin:~/.local/bin:$PATH
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git python systemd adb web-search colored-man-pages colorize compleat wd extract zsh-completions svn)
+plugins=(git python systemd adb web-search colored-man-pages colorize compleat wd extract zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
+#source /home/nomad/bin/antigen.zsh
 source ~/.cache/wal/colors.sh
 
 alias emerge="sudo emerge"
-alias nano="nano -w"
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
 alias mount="sudo mount"
 alias umount="sudo umount"
@@ -29,6 +29,7 @@ alias t="~/.config/ssh_tv.sh"
 alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
 alias nmap="sudo nmap"
 alias v="vim"
+alias p="ssh puppet"
 alias r="ranger"
 alias etc-update="sudo etc-update"
 alias oscar="toilet Oscar"
@@ -36,6 +37,8 @@ alias axel="toilet Axel"
 alias reboot="sudo reboot"
 alias up="nmcli con up"
 alias down="nmcli con down"
+alias code="visual-studio-code"
+alias f="fzf"
 
 autoload -U compinit promptinit
 compinit

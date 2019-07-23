@@ -92,7 +92,7 @@ enable-ipc = true
 [module/xwindow]
 type = internal/xwindow
 label = Window: %title%
-label-maxlen = 50
+label-maxlen = 90
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -124,7 +124,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/ewmh]
 type = internal/xworkspaces
-pin-workspaces = true
+pin-workspaces = false
 enable-click = true
 enable-scroll = false
 icon-default = 
@@ -162,6 +162,8 @@ label-empty = 
 ;label-occupied = %icon%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
+
+enable-scroll = false
 
 [module/i3]
 type = internal/i3
@@ -349,7 +351,7 @@ label-muted = "%percentage%%"
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 97
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a

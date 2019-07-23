@@ -29,7 +29,13 @@ super + Return
 
 # new browser window
 alt + Return
-	google-chrome-stable	
+	google-chrome --profile-directory="Profile 1"
+alt + shift + Return
+    google-chrome --profile-directory="Default"
+
+# File-Explorer
+ctrl + Return
+    nautilus
 
 # program launcher
 #super + d

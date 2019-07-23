@@ -2,10 +2,9 @@
 
 # Ett litet skript för att slå av/på touchpaden.
 
-device="12"
+device=$(xinput| grep DLL |awk '{print $5}' | sed 's/id=//')
+status=$(xinput --list-props $device | grep "Device Enabled" | awk '{ print $4}')
 
-
-status="$(xinput --list-props $device | grep "Device Enabled" | awk '{ print $4}')"
 
 if [ $status == "1" ]; then
 	xinput --set-prop $device "Device Enabled" 0

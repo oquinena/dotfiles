@@ -3,21 +3,24 @@ scriptencoding utf-8
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set number                           " Show the line number
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'majutsushi/tagbar'
 Plugin 'Puppet-Syntax-Highlighting'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/badwolf'
 Plugin 'jbosslog'
 Plugin 'ctrlp.vim'
 Plugin 'dylanaraps/wal.vim'
-"Plugin 'itchyny/lightline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Windows-PowerShell-File-Type-Plugin'
@@ -27,13 +30,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'wombat256.vim'  
 Plugin 'textutil.vim'
 Plugin 'baskerville/vim-sxhkdrc'
-Plugin 'morhetz/gruvbox'
+"Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/goyo.vim'
 Plugin 'Syntastic'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'alessandroyorba/sidonia'
+Plugin 'flazz/vim-colorschemes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -153,7 +156,7 @@ if isdirectory(expand("$VIMRUNTIME/ftplugin"))
   " Uncomment the next line (or copy to your ~/.vimrc) for plugin-provided
   " indent settings. Some people don't like these, so we won't turn them on by
   " default.
-  " filetype indent on
+  filetype indent on
 endif
 " }}}
 
@@ -240,12 +243,12 @@ set laststatus=2
 
 set tabstop=4
 set shiftwidth=4
+set smarttab
 set expandtab
 set mouse=a
 set clipboard=unnamedplus
 set cursorline                       " Highligt the cursor line
 "set cursorcolumn                     " Highlight the column line
-set number                           " Show the line number
 
 let g:lightline = {
       \ 'component': {
@@ -262,7 +265,7 @@ if !has('gui_running')
   endif
 
 set termguicolors
-  colorscheme sidonia
+  colorscheme molokai
 "   colorscheme wal
 "set background=dark
 
@@ -271,9 +274,24 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-colorscheme gruvbox
-set background=dark
+colorscheme molokai
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+"""""""""""""""""""""""""""""""""""""
+" Mappings configurationn
+"""""""""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+map <C-m> :TagbarToggle<CR>
+
+let g:tagbar_type_puppet = {
+    \ 'ctagstype': 'puppet',
+    \ 'kinds': [
+        \'c:class',
+        \'s:site',
+        \'n:node',
+        \'d:definition'
+      \]
+    \}

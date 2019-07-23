@@ -7,13 +7,13 @@
 
 #bspc config external_rules_command "$(which external_rules)"
 
-#bspc monitor -d 1 2 3 4 5 6 7 8 9 
-if [[ "xrandr | grep 'HDMI-1 connected'" ]]; then
-    bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8
-    bspc monitor HDMI-1 -d 9
-else
-    bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
-fi
+bspc monitor -d 1 2 3 4 5 6 7
+#if $(xrandr | grep 'HDMI-1 connected'); then
+#    bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8
+#    bspc monitor HDMI-1 -d 9
+#else
+#    bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+#fi
 
 bspc config border_width        	 3
 bspc config window_gap          	 10
@@ -29,9 +29,10 @@ bspc config presel_feedback_color	'#7a7a7a'
 bspc config normal_border_color "$color1"
 bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
+#bspc config external_rules_command /home/nomad/bin/max_windows.sh 
 #bspc config presel_feedback_color "$color1" 
 
-bspc config split_ratio         	 0.52
+bspc config split_ratio         	 0.5
 bspc config borderless_monocle  	 true
 bspc config gapless_monocle     	 true
 
@@ -43,6 +44,7 @@ bspc rule -a Gimp desktop=^4 state=floating follow=on
 bspc rule -a chromium-browser-chromium desktop=^1
 #bspc rule -a VirtualBox desktop=^4 state=floating follow=on
 bspc rule -a feh state=floating 
+bspc rule -a sxiv state=floating 
 bspc rule -a Screenkey manage=off
 bspc rule -a pavucontrol state=floating 
 bspc rule -a Deluge desktop=^3 follow=on
@@ -50,5 +52,7 @@ bspc rule -a mupdf state=floating
 bspc rule -a Galculator state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
-bspc rule -a Spotify desktop=^5
+bspc rule -a spotify desktop=^5
 bspc rule -a Nitrogen state=floating
+bspc rule -a Wfica desktop=^2 state=pseudo_tiled
+bspc rule -a Wfica_Seamless desktop=^2 state=floating

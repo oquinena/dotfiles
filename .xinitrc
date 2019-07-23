@@ -4,7 +4,7 @@ xset s off
 xset -b
 setxkbmap -option terminate:ctrl_alt_bksp
 xset r rate 250 60
-WALLPAPER="/home/nomad/Pictures/wallpapers/wp3403874-flat-wallpaper.jpg"
+WALLPAPER="/home/nomad/Pictures/wallpapers/misty_trees.jpg"
 
 ###### For gnome-keyring to work #######
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

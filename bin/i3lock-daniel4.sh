@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Example locker script -- demonstrates how to use the --transfer-sleep-lock
-# option with i3lock's forking mode to delay sleep until the screen is locked.
+# Ett litet skript för att låsa skärmen och lägga på en skärmdump 
 
 ## CONFIGURATION ##############################################################
 
