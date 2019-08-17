@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.cache/wal/colors.sh
 
 alias emerge="sudo emerge"
+alias emerge-time="genlop -t"
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
 alias mount="sudo mount"
 alias umount="sudo umount"
