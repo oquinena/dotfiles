@@ -1,4 +1,3 @@
-rename F5VPN-linux_kranglig_installation_anvand_den_andra.tgz
 rename boras.catalina.errorlog.20190124
 search mastering
 delete'
@@ -48,3 +47,4 @@ rename The deep S03E02 - Ingen tackning.mp4
 
 rename site_setup'.php
 delete
+search wall
