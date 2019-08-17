@@ -52,7 +52,7 @@ text="Type password to unlock"
 case "${LANG:-}" in
     de_* ) text="Bitte Passwort eingeben" ;; # Deutsch
     da_* ) text="Indtast adgangskode" ;; # Danish
-    en_* ) text="Enter Password to unlock" ;; # English
+    en_* ) text="" ;; # English
     es_* ) text="Ingrese su contraseña" ;; # Española
     fr_* ) text="Entrez votre mot de passe" ;; # Français
     id_* ) text="Masukkan kata sandi Anda" ;; # Bahasa Indonesia
