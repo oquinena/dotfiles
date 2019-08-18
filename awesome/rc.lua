@@ -18,6 +18,10 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- lägger till lain (https://github.com/lcpz/lain) och hantering för flera skärmar
+local lain = require("lain")
+local xrandr = require("xrandr")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -63,19 +67,19 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.floating,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier,
+    -- awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -164,6 +168,17 @@ local function set_wallpaper(s)
     end
 end
 
+-- Lägger till volymkontroll
+local volume = lain.widget.pulse {
+    settings = function()
+        vlevel = volume_now.left .. "-" .. volume_now.right .. "% | " .. volume_now.device
+        if volume_now.muted == "yes" then
+            vlevel = vlevel .. " M"
+        end
+        widget:set_markup(lain.util.markup("#7493d2", vlevel))
+    end
+}
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -195,12 +210,57 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = taglist_buttons
     }
 
-    -- Create a tasklist widget
+    -- Create a tasklist widget, modifiering från awesomewm.org
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = tasklist_buttons,
-    }
+        style    = {
+        shape_border_width = 1,
+        shape_border_color = '#777777',
+        shape  = gears.shape.rectangle,
+    },
+    layout   = {
+        spacing = 10,
+        spacing_widget = {
+            {
+                forced_width = 5,
+                shape        = gears.shape.circle,
+                widget       = wibox.widget.separator
+            },
+            valign = 'center',
+            halign = 'center',
+            widget = wibox.container.place,
+        },
+        layout  = wibox.layout.flex.horizontal
+    },
+    -- Notice that there is *NO* wibox.wibox prefix, it is a template,
+    -- not a widget instance.
+    widget_template = {
+        {
+            {
+                {
+                    {
+                        id     = 'icon_role',
+                        widget = wibox.widget.imagebox,
+                    },
+                    margins = 2,
+                    widget  = wibox.container.margin,
+                },
+                {
+                    id     = 'text_role',
+                    widget = wibox.widget.textbox,
+                },
+                layout = wibox.layout.fixed.horizontal,
+            },
+            left  = 10,
+            right = 10,
+            widget = wibox.container.margin
+        },
+        id     = 'background_role',
+        widget = wibox.container.background,
+    },
+}
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -221,6 +281,7 @@ awful.screen.connect_for_each_screen(function(s)
                 battery_prefix = "  ",
                 ac_prefix = " ",},
             --mykeyboardlayout,
+            volume.widget,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -283,6 +344,9 @@ globalkeys = gears.table.join(
         end,
         {description = "go back", group = "client"}),
 
+    -- Toggla xrandr skärmdelning
+    awful.key({ modkey, "Mod1"    }, "Space", function() xrandr.xrandr() end,
+              {description = "toggle xrandr output", group = "awesome"}),
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -589,4 +653,30 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- Testar lite kod för att autostarta vid uppstart, funkar inte i nuläget
+-- function spawn_once(command, class, tag) 
+--   -- create move callback
+--   local callback 
+--   callback = function(c) 
+--     if c.class == class then 
+--       awful.client.movetotag(tag, c) 
+--       client.disconnect_signal("manage", callback) 
+--     end 
+--   end 
+--   client.connect_signal("manage", callback) 
+--   -- now check if not already running!     
+--   local findme = command
+--   local firstspace = findme:find(" ")
+--   if firstspace then
+--     findme = findme:sub(0, firstspace-1)
+--   end
+--   -- finally run it
+--   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. command .. ")")
+-- end
+-- 
+-- -- use the spawn_once
+-- spawn_once("google-chrome --profile-directory='Profile 1'", "google-chrome", tags[1])
+-- spawn_once("google-chrome --profile-directory='Default'", "google-chrome", tags[2])
+
 -- }}}
