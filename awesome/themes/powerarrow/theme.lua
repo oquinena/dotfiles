@@ -18,7 +18,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
+theme.wallpaper                                 = theme.dir .. "/04167_unreachable_1920x1080.jpg"
 theme.font                                      = "Ubuntu Condensed 8"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
@@ -44,18 +44,18 @@ theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.p
 theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
 theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
-theme.layout_tile                               = theme.dir .. "/icons/tile.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
-theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
-theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
-theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
-theme.layout_max                                = theme.dir .. "/icons/max.png"
-theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
-theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+--theme.layout_tile                               = theme.dir .. "/icons/tile.png"
+--theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
+--theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
+--theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
+--theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
+--theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
+--theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
+--theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
+--theme.layout_max                                = theme.dir .. "/icons/max.png"
+--theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
+--theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
+--theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.widget_ac                                 = theme.dir .. "/icons/ac.png"
 theme.widget_battery                            = theme.dir .. "/icons/battery.png"
 theme.widget_battery_low                        = theme.dir .. "/icons/battery_low.png"
@@ -298,6 +298,13 @@ local brightwidget = awful.widget.watch('light -G', 0.1,
         widget:set_markup(markup.font(theme.font, " " .. brightness_level .. "%"))
 end)
 
+-- Volume
+--local volumeindicator = awful.widget.watch('pactl list sinks | grep "^[[:space:]]Volume:" | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e "s,.* \([0-9][0-9]*\)%.*,\1,"', 0.1,
+--    function(widget, stdout, stderr, exitreason, exitcode)
+--        local volume_level = tonumber(string.format("%.0f", stdout))
+--        widget:set_markup(markup.font(theme.font, " " .. volume_level .. "%"))
+--end)
+
 --local volwidget = awful.widget.watch(''
 
 -- Separators
@@ -338,9 +345,9 @@ function theme.at_screen_connect(s)
     gears.wallpaper.maximized(wallpaper, s, true)
 
     -- Tags
-    awful.tag(awful.util.tagnames, s, awful.layout.layouts)
+    awful.tag(awful.util.tagnames, s, awful.layout.suit.tile)
 
-    s.mytextclock = wibox.widget.textclock("  %H:%M ")
+    s.mytextclock = wibox.widget.textclock("  %H:%M - %d/%m ")
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
@@ -366,8 +373,7 @@ function theme.at_screen_connect(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            --spr,
-            s.mylayoutbox,
+            spr,
             s.mytaglist,
             s.mypromptbox,
             spr,
@@ -380,8 +386,8 @@ function theme.at_screen_connect(s)
             --pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             --pl(task, "#343434"),
             --pl(wibox.widget { mailicon, mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, "#343434"),
-            --pl(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, "#4B696D"),
-            pl(wibox.widget { volumearc_widget, layout = wibox.layout.align.horizontal }, "#4B696D"),
+            --pl(wibox.widget { volumeindicator, layout = wibox.layout.align.horizontal }, "#4B696D"),
+            pl(wibox.widget { s.mylayoutbox, layout = wibox.layout.align.horizontal }, "#4B696D"),
             pl(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, "#C0C0A2"),
             pl(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, "#777E76"),
             --pl(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, "#4B3B51"),

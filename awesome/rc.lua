@@ -43,7 +43,7 @@ do
         in_error = true
 
         naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
+                         title = "Hoppsan, nåt gick snett!",
                          text = tostring(err) })
         in_error = false
     end)
@@ -491,6 +491,8 @@ globalkeys = my_table.join(
               {description = "run gui editor", group = "launcher"}),
     awful.key({}, "XF86Calculator", function () awful.spawn("galculator") end,
               {description = "run calculator", group = "launcher"}),
+    awful.key({ modkey, "Shift"}, "m", function () awful.spawn("toggle_touchpad.sh") end,
+              {description = "Toggle touchpad active/inactive", group = "hotkeys"}),
 
     -- Default
     --[[ Menubar
