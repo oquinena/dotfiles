@@ -26,8 +26,8 @@ alias emerge-time="genlop -t"
 alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
 alias mount="sudo mount"
 alias umount="sudo umount"
-alias t="~/.config/ssh_tv.sh"
-alias tm="sshfs nomad@tv:/ /mnt/tv && cd /mnt/tv"
+alias t="timew"
+alias ts="timew summary"
 alias nmap="sudo nmap"
 alias v="vim"
 alias p="ssh puppet"
@@ -40,6 +40,7 @@ alias up="nmcli con up"
 alias down="nmcli con down"
 alias code="visual-studio-code"
 alias f="fzf"
+alias cdp="cd /home/nomad/Fast2/puppet/code/modules"
 
 autoload -U compinit promptinit
 compinit
