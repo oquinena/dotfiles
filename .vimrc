@@ -29,6 +29,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'wombat256.vim'  
 Plugin 'textutil.vim'
 Plugin 'baskerville/vim-sxhkdrc'
+Plugin 'neoclide/coc.nvim'
 "Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/goyo.vim'
 Plugin 'dhruvasagar/vim-table-mode'
@@ -58,7 +59,47 @@ set history=50          " keep 50 lines of command history
 set ruler               " Show the cursor position all the time
 
 set viminfo='20,\"500   " Keep a .viminfo file.
+" added for coc.vim
+" """"""""""""""""""""""""""""""
+set hidden
+set cmdheight=2
+set signcolumn=yes
+set updatetime=300
+set shortmess+=c
+set statusline+=%{coc#status()}
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+"""""""""""""""""""""""""""""""""
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
