@@ -19,10 +19,12 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/blue-minimalist-mountain-range-wallpaper-1920x1080-wallpaper.jpg"
 theme.font                                      = "Ubuntu Condensed 8"
 theme.fg_normal                                 = "#DDDDFF"
-theme.fg_focus                                  = "#EA6F81"
+--theme.fg_focus                                  = "#EA6F81"
+theme.fg_focus                                  = "#6fc3ea"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_normal                                 = "#1A1A1A"
-theme.bg_focus                                  = "#313131"
+--theme.bg_focus                                  = "#313131"
+theme.bg_focus                                  = "#5c5c5c"
 theme.bg_urgent                                 = "#1A1A1A"
 theme.border_width                              = dpi(2)
 theme.border_normal                             = "#3F3F3F"
@@ -49,6 +51,7 @@ theme.layout_max                                = theme.dir .. "/icons/max.png"
 theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
 theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
 theme.widget_ac                                 = theme.dir .. "/icons/ac.png"
 theme.widget_battery                            = theme.dir .. "/icons/battery.png"
 theme.widget_battery_low                        = theme.dir .. "/icons/battery_low.png"
@@ -308,9 +311,9 @@ function theme.at_screen_connect(s)
             arrl_ld,
             --wibox.container.background(mpdicon, theme.bg_focus),
             --wibox.container.background(theme.mpd.widget, theme.bg_focus),
-            arrl_dl,
-            volicon,
-            theme.volume.widget,
+            --arrl_dl,
+            wibox.container.background(volicon, theme.bg_focus),
+            wibox.container.background(theme.volume.widget, theme.bg_focus),
             --arrl_ld,
             --wibox.container.background(mailicon, theme.bg_focus),
             --wibox.container.background(theme.mail.widget, theme.bg_focus),
@@ -326,16 +329,16 @@ function theme.at_screen_connect(s)
             --arrl_ld,
             --wibox.container.background(fsicon, theme.bg_focus),
             --wibox.container.background(theme.fs.widget, theme.bg_focus),
-            arrl_dl,
-            baticon,
-            bat.widget,
             arrl_ld,
             wibox.container.background(neticon, theme.bg_focus),
             wibox.container.background(net.widget, theme.bg_focus),
             arrl_dl,
-            clock,
-            spr,
+            baticon,
+            bat.widget,
             arrl_ld,
+            wibox.container.background(clock, theme.bg_focus),
+            arrl_dl,
+            spr,
             wibox.widget.systray(),
             spr,
             arrl_ld,

@@ -437,6 +437,9 @@ globalkeys = my_table.join(
     awful.key({ }, "XF86AudioMute", function ()
             awful.util.spawn("pactl set-sink-mute 0 toggle", false) end,
         {description = "volume mute", group = "hotkeys"}),
+    awful.key({ }, "XF86AudioMicMute", function ()
+            awful.util.spawn("pactl set-source-mute 1 toggle", false) end,
+        {description = "microphone mute", group = "hotkeys"}),
 
     -- MPD control
     --awful.key({ altkey, "Control" }, "Up",

@@ -15,8 +15,8 @@ local tonumber = tonumber
 local function factory(args)
     local temp     = { widget = wibox.widget.textbox() }
     local args     = args or {}
-    local timeout  = args.timeout or 30
-    local tempfile = args.tempfile or "/sys/devices/virtual/thermal/thermal_zone0/temp"
+    local timeout  = args.timeout or 1
+    local tempfile = args.tempfile or "/sys/devices/virtual/thermal/thermal_zone2/temp"
     local settings = args.settings or function() end
 
     function temp.update()
