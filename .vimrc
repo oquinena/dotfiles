@@ -30,11 +30,12 @@ Plugin 'wombat256.vim'
 Plugin 'textutil.vim'
 Plugin 'baskerville/vim-sxhkdrc'
 Plugin 'neoclide/coc.nvim'
+Plugin 'mtdl9/vim-log-highlighting'
 "Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/goyo.vim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 Plugin 'flazz/vim-colorschemes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -334,3 +335,4 @@ let g:tagbar_type_puppet = {
         \'d:definition'
       \]
     \}
+au BufNewFile,BufRead Jenkinsfile setf groovy

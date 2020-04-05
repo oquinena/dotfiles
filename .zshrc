@@ -9,7 +9,7 @@ HISTSIZE= HISTFILESIZE=
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=30
 export ZSH=/home/nomad/.oh-my-zsh
-export PATH=~/Fast2/bin:~/bin:~/.local/bin:$PATH
+export PATH=~/Fast2/bin:~/bin:~/.local/bin:~/azuredatastudio:$PATH
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"

@@ -5,7 +5,6 @@
 
 --]]
 
-local volumearc = require("awesome-wm-widgets.volumearc-widget.volumearc")
 local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
@@ -18,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
-theme.wallpaper                                 = theme.dir .. "/4k-wallpaper-aromatic-close-up-1265584.jpg"
+theme.wallpaper                                 = theme.dir .. "/blue-minimalist-mountain-range-wallpaper-1920x1080-wallpaper.jpg"
 theme.font                                      = "Ubuntu Condensed 8"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
@@ -162,15 +161,15 @@ theme.mail = lain.widget.imap({
 --})
 
 -- PulseAudio
---theme.volume = lain.widget.pulse {
---    settings = function()
---        vlevel = volume_now.left .. "-" .. volume_now.right .. "% | " .. volume_now.device
---        if volume_now.muted == "yes" then
---            vlevel = vlevel .. " M"
---        end
---        widget:set_markup(lain.util.markup("#7493d2", vlevel))
---    end
---}
+theme.volume = lain.widget.pulse {
+    settings = function()
+        vlevel = volume_now.left .. "-" .. volume_now.right .. "% | " .. volume_now.device
+        if volume_now.muted == "yes" then
+            vlevel = vlevel .. " M"
+        end
+        widget:set_markup(lain.util.markup("#7493d2", vlevel))
+    end
+}
 
 -- MPD
 local musicplr = awful.util.terminal .. " -title Music -g 130x34-320+16 -e ncmpcpp"
@@ -299,11 +298,12 @@ local brightwidget = awful.widget.watch('light -G', 0.1,
 end)
 
 -- Volume
---local volumeindicator = awful.widget.watch('pactl list sinks | grep "^[[:space:]]Volume:" | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e "s,.* \([0-9][0-9]*\)%.*,\1,"', 0.1,
---    function(widget, stdout, stderr, exitreason, exitcode)
---        local volume_level = tonumber(string.format("%.0f", stdout))
---        widget:set_markup(markup.font(theme.font, " " .. volume_level .. "%"))
---end)
+local volumeindicator = awful.widget.watch('pactl list sinks | grep "^[[:space:]]Volume:" | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e "s,.* \([0-9][0-9]*\)%.*,\1,"', 0.1,
+    function(widget, stdout, stderr, exitreason, exitcode)
+        local volume_level = tonumber(string.format("%.0f", stdout))
+        widget:set_markup(markup.font(theme.font, " " .. volume_level .. "%"))
+        return
+end)
 
 --local volwidget = awful.widget.watch(''
 
@@ -386,13 +386,13 @@ function theme.at_screen_connect(s)
             --pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             --pl(task, "#343434"),
             --pl(wibox.widget { mailicon, mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, "#343434"),
-            --pl(wibox.widget { volumeindicator, layout = wibox.layout.align.horizontal }, "#4B696D"),
             pl(wibox.widget { s.mylayoutbox, layout = wibox.layout.align.horizontal }, "#4B696D"),
             pl(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, "#C0C0A2"),
             pl(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, "#777E76"),
             --pl(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, "#4B3B51"),
             pl(wibox.widget { brighticon, brightwidget, layout = wibox.layout.align.horizontal }, "#CB755B"),
             pl(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, "#8DAA9A"),
+            pl(wibox.widget { volumeindicator, layout = wibox.layout.align.horizontal }, "#4B696D"),
             pl(wibox.widget { s.mytextclock, layout = wibox.layout.align.horizontal },"#777E76"),
             --]]
             -- using separators
