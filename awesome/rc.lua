@@ -345,15 +345,15 @@ globalkeys = my_table.join(
         {description = "go back", group = "client"}),
 
     -- Show/Hide Wibox
-    awful.key({ modkey }, "b", function ()
-            for s in screen do
-                s.mywibox.visible = not s.mywibox.visible
-                if s.mybottomwibox then
-                    s.mybottomwibox.visible = not s.mybottomwibox.visible
-                end
-            end
-        end,
-        {description = "toggle wibox", group = "awesome"}),
+    --awful.key({ modkey }, "b", function ()
+    --        for s in screen do
+    --            s.mywibox.visible = not s.mywibox.visible
+    --            if s.mybottomwibox then
+    --                s.mybottomwibox.visible = not s.mybottomwibox.visible
+    --            end
+    --        end
+    --    end,
+    --    {description = "toggle wibox", group = "awesome"}),
 
     -- On the fly useless gaps change
     awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(1) end,
@@ -665,13 +665,11 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = false } },
 
-    -- Set Firefox to always map on the first tag on screen 1.
-    { rule = { class = "Firefox" },
-      properties = { screen = 1, tag = awful.util.tagnames[1] } },
-
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
-}
+    { rule_any = { instance = { "galculator" } },
+      properties = { floating = true, ontop = true, placement = awful.placement.centered } },
+
 -- }}}
 
 -- {{{ Signals
@@ -744,7 +742,11 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
+client.connect_signal("manage", function (c)
+    c.shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,7)
+    end
+end)
 -- possible workaround for tag preservation when switching back to default screen:
 -- https://github.com/lcpz/awesome-copycats/issues/251
 -- }}}
