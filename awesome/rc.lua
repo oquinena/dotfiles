@@ -659,7 +659,7 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
                      size_hints_honor = false
      }
-    },
+   } },
 
     -- Titlebars
     { rule_any = { type = { "dialog", "normal" } },

@@ -18,6 +18,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'rodjek/vim-puppet'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/badwolf'
+Plugin 'wadackel/vim-dogrun'
 Plugin 'jbosslog'
 Plugin 'ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
@@ -305,7 +306,7 @@ if !has('gui_running')
   endif
 
 set termguicolors
-  colorscheme molokai
+  colorscheme dogrun
 "   colorscheme wal
 "set background=dark
 
@@ -314,7 +315,7 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-colorscheme molokai
+colorscheme dogrun
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

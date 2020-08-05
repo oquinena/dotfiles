@@ -2,7 +2,8 @@
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-HISTSIZE= HISTFILESIZE=
+HISTSIZE= 
+HISTFILESIZE=
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
@@ -23,7 +24,7 @@ source ~/.cache/wal/colors.sh
 
 alias emerge="sudo emerge"
 alias emerge-time="genlop -t"
-alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --with-bdeps=y @world"
+alias u="sudo emerge --sync && sudo layman -S && sudo emerge -auvDU --keep-going --with-bdeps=y @world"
 alias mount="sudo mount"
 alias umount="sudo umount"
 alias t="timew"
@@ -55,3 +56,6 @@ function zle-line-init () { echoti smkx }
 function zle-line-finish () { echoti rmkx }
 zle -N zle-line-init
 zle -N zle-line-finish
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

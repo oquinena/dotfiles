@@ -1,5 +1,3 @@
-delete'
-q!
 quit 
 search masterin
 search master
@@ -25,17 +23,14 @@ search app
 search App
 open_with .
 rename postmessage.html
-q
 rename 2019-04-15-11-13-03_3840x1200.jpg
 search tri
 search windows
 search mondi
-open_with 
 shell mkdir daniel.2019-04-24
 shell mkdir daniel-20190424
 shell gimp 2019-04-08-21-00-51_3840x1200.jpg
 rename 2019-04-24-17-10-20_3840x1200.jpg
-open_with vim
 shell FamboSTHLM
 rename FamboSthlm
 shell mkdir tmp
@@ -45,6 +40,11 @@ rename The deep S03E02 - Ingen tackning.mp4
 
 rename site_setup'.php
 search wall
-shell mkdir 
-delete
 shell mkdir tuxedit
+open_with kl
+open_with 
+delete
+open_with vim
+shell mkdir 
+shell mkdir offline
+q
