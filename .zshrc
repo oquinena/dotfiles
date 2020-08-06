@@ -11,7 +11,7 @@ export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=30
 export ZSH=/home/nomad/.oh-my-zsh
 export PATH=~/Fast2/bin:~/bin:~/.local/bin:~/azuredatastudio:$PATH
-export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANPAGER="/bin/sh -c \"col -b | vi --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
@@ -30,7 +30,7 @@ alias umount="sudo umount"
 alias t="timew"
 alias ts="timew summary"
 alias nmap="sudo nmap"
-alias v="vim"
+alias v="vi"
 alias p="ssh puppet"
 alias r="ranger"
 alias etc-update="sudo etc-update"
@@ -49,7 +49,7 @@ promptinit; prompt gentoo
 zstyle ':completion::complete:*' use-cache 1
 #set -o vi
 
-export EDITOR="vim"
+export EDITOR="vi"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function zle-line-init () { echoti smkx }
