@@ -1,1 +1,1 @@
-vboxmanage startvm "FAST2-win10"
+vboxmanage startvm "Windows 10"
